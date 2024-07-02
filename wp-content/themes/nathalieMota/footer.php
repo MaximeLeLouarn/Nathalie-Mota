@@ -1,11 +1,22 @@
- <?php 
-        $phone_number = get_option('cookinfamily_settings_field_phone_number');
-        $email = get_option('cookinfamily_settings_field_email');
-      ?>
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package nathalieMota
+ */
 
-<footer> 
+?>
 
-</footer>
+	<footer id="colophon" class="site-footer">
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
 
 </body>
 </html>
