@@ -1,1 +1,14 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  max-width: 1440px;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */

@@ -13,6 +13,17 @@
 
 	<footer id="colophon" class="site-footer">
 
+	<nav id="footer-menu" class="footer-menu">
+		<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-menu',
+						'menu_id'        => 'footer-menu',
+					)
+				);
+		?>
+	</nav>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
