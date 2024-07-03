@@ -29,13 +29,45 @@
 
 		<nav id="site-navigation" class="main-navigation">
 
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+			<div class="logoHeader">
+				<a href="<?php echo get_home_url(); ?>">
+					<img src="<?= get_template_directory_uri() . '/assets/Logo.png' ?>" alt="Logo Nathalie Mota">
+				</a>
+			</div>
+
+			<div class="headerMenusContainer">
+
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+					
+				<div class="closedMenu">
+
+					<button class="menuToggle" aria-controls="mobile-menu" aria-expanded="false">
+						<span class="line1"></span>
+						<span class="line2"></span>
+						<span class="line3"></span>
+					</button>
+					
+				</div>
+
+				<div class="openedMenu">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'Mobile',
+						'menu_id'        => 'mobile-menu',
+					)
+				);
+				?>
+				</div>
+
+			</div>
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

@@ -50,6 +50,7 @@ function nathaliemota_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'nathaliemota' ),
+			'mobile-menu' => esc_html('Mobile', 'nathaliemota'),
 			'footer-menu' => esc_html__('Footer', 'nathaliemota'),
 		)
 	);
