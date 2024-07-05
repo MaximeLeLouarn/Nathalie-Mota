@@ -12,17 +12,40 @@ $lightGrey: #e5e5e5;
 // Include the fonts
 @font-face {
     font-family: "Poppins";
-    src:
-        url("../assets/Poppins-Regular.ttf") format("truetype"),
-        url("../assets/Poppins-Light.ttf") format("truetype");
+    src: url("../assets/Poppins-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/Poppins-Light.ttf") format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url("../assets/SpaceMono-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
 }
 @font-face {
     font-family: "Space Mono";
-    src:
-        url("../assets/SpaceMono-Bold.ttf") format("truetype"),
-        url("../assets/SpaceMono-BoldItalic.ttf") format("truetype"),
-        url("../assets/SpaceMono-Italic.ttf") format("truetype"),
-        url("../assets/SpaceMono-Regular.ttf") format("truetype");
+    src: url("../assets/SpaceMono-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Space Mono";
+    src: url("../assets/SpaceMono-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Space Mono";
+    src: url("../assets/SpaceMono-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 // General styling parameters
@@ -32,6 +55,7 @@ $lightGrey: #e5e5e5;
     color: $black;
 }
 body {
+    box-sizing: border-box;
     max-width: 1440px;
     margin: auto;
     min-height: 100vh;
@@ -41,6 +65,9 @@ li {
     list-style-type: none;
 }
 a {
+    font-family: "Space Mono", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -79,6 +106,7 @@ p {
         font-size: 27.5px;
     }
     h2 {
+        line-height: 3.5rem;
         font-size: 48px;
     }
 }
@@ -147,6 +175,7 @@ header {
         flex-direction: column;
         cursor: pointer;
         background-color: #fff;
+        border: none;
 
         .line1 {
             height: 1px;
@@ -168,25 +197,74 @@ header {
         }
     }
 }
+.openedMenu.openingTheMenu.fixedMenu {
+    background-color: $darkRed;
+
+    .menu-mobile-menu-container {
+        height: 100%;
+    }
+}
 .openedMenu {
     display: none;
-    max-width: 1442px;
     overflow: hidden;
 
-    ul#mobile-menu {
+    ul#Mobile {
+        display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         width: 100%;
-        position: absolute;
-        top: 72px;
         text-align: center;
-        overflow: hidden;
+        height: 100%;
+        padding-bottom: 10%;
+        gap: 5%;
+
+        h2 {
+            color: $white;
+            font-size: 44px;
+            font-style: normal;
+        }
     }
 }
 @media screen and (max-width: 768px) {
-    .menuToggle {
+    .menu-menu-1-container {
+        display: none;
+    }
+
+    .closedMenu {
         display: flex;
     }
+}
+// Class effects to make the burger Menu working
+.line1Transform {
+    transform: rotate(45deg);
+}
+.line3Transform {
+    transform: rotate(-45deg);
+}
+.calibrateCross {
+    justify-content: center !important;
+}
+.openingTheMenu {
+    display: flex !important;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: $white;
+    margin-top: 50px;
+    transition: 1s ease;
+}
+.fixedMenu {
+    position: fixed !important;
+}
+.fixedNavBar {
+    height: 80px !important;
+    position: fixed;
+    max-width: 1440px;
+    width: 100% !important;
+}
+.hidden {
+    display: none !important;
 }
 
 footer#colophon {
@@ -242,6 +320,166 @@ footer#colophon {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+// The contact modal
+/* Modal CSS */
+// .contactModal {
+//     display: none; /* Hidden by default */
+//     position: fixed; /* Stay in place */
+//     z-index: 1; /* Sit on top */
+//     left: 0;
+//     top: 0;
+//     width: 100%; /* Full width */
+//     height: 100%; /* Full height */
+//     overflow: auto; /* Enable scroll if needed */
+//     background-color: rgb(0, 0, 0); /* Fallback color */
+//     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+// }
+
+// .modalContent {
+//     background-color: #fefefe;
+//     margin: 15% auto; /* 15% from the top and centered */
+//     padding: 20px;
+//     border: 1px solid #888;
+//     width: 80%; /* Could be more or less, depending on screen size */
+// }
+
+// .close {
+//     color: #aaa;
+//     float: right;
+//     font-size: 28px;
+//     font-weight: bold;
+// }
+
+// .close:hover,
+// .close:focus {
+//     color: black;
+//     text-decoration: none;
+//     cursor: pointer;
+// }
+
+// Styling the photo post
+.firstContainerPhoto {
+    margin-right: 8%;
+    margin-left: 8%;
+    padding-top: 3%;
+    .photoPost {
+        display: flex;
+        flex-direction: column;
+        .imgPhoto {
+            display: flex;
+            flex-direction: column;
+        }
+        .photoInformations {
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            p {
+                padding-top: 5px;
+            }
+        }
+    }
+}
+.phoneBorders {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+
+    .contactContent {
+        margin: 0 8%;
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .desktopPhotoNav {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .desktop100vh {
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        // top: 80px;
+    }
+    .firstContainerPhoto {
+        padding-top: 0;
+        .photoPost {
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            padding-bottom: 0px;
+            gap: 4%;
+            align-items: flex-end;
+            .imgPhoto {
+                width: 48%;
+
+                img {
+                    object-fit: contain;
+                    max-width: 100%;
+                }
+            }
+            .photoInformations {
+                width: 48%;
+                padding-top: 0px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                p {
+                    padding-top: 5px;
+                }
+            }
+        }
+    }
+    .phoneBorders {
+        padding-bottom: 3px;
+        padding-top: 3px;
+        border-top: none;
+        border-bottom: 1px solid $black;
+
+        .contactContent {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            gap: 4%;
+            margin-right: 8%;
+            margin-left: 8%;
+            .pContactButton {
+                width: 48%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                button {
+                    margin-top: 10px;
+                    width: 50%;
+                    height: 50px;
+                    text-align: center;
+                    border-radius: 2px;
+                    border: none;
+                }
+                .desktopPhotoNav {
+                    width: 48%;
+                    display: flex;
+                    justify-content: flex-end;
                     align-items: center;
                 }
             }

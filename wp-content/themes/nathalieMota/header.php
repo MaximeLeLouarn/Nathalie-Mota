@@ -45,7 +45,7 @@
 						)
 					);
 					?>
-					
+
 				<div class="closedMenu">
 
 					<button class="menuToggle" aria-controls="mobile-menu" aria-expanded="false">
@@ -55,18 +55,18 @@
 					</button>
 					
 				</div>
-
-				<div class="openedMenu">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'Mobile',
-						'menu_id'        => 'mobile-menu',
-					)
-				);
-				?>
-				</div>
-
+				
+			</div>
+			
+			<div class="openedMenu">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'mobile-menu',
+					'menu_id'        => 'Mobile',
+				)
+			);
+			?>
 			</div>
 
 		</nav><!-- #site-navigation -->

@@ -145,6 +145,8 @@ function nathaliemota_scripts() {
 	wp_style_add_data( 'nathaliemota-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'nathaliemota-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nathaliemota-burgerMenu', get_template_directory_uri() . '/js/burgerMenu.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nathaliemota-contactModal', get_template_directory_uri() . '/js/modal.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -179,3 +181,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Links for CPT 
+// function replace_slug ($post_link, $post) {
+// 	if(false !== strpos($post_link, '%photo%')){
+// 		$photo = get_the_terms($post->ID, 'photo');
+// 		if(!empty($photo)) {
+// 			$post_link = str_replace('%photo%', array_pop($photo)->slug, $post_link);
+// 		}
+// 	}
+// 	return $post_link;
+// }
+// add_filter('post_type_link', 'replace_slug', 10, 2);
