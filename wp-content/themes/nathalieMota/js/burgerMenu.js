@@ -7,6 +7,7 @@ const buttonMenu = document.querySelector(".menuToggle");
 const openedMenu = document.querySelector(".openedMenu");
 const navBar = document.querySelector(".site-header");
 const burgerLinks = document.querySelectorAll(".burgerLink");
+const contactMobileLink = document.querySelector(".burgerLinkModal");
 const hideFooter = document.querySelector(".site-footer");
 const hideEntryHeader = document.querySelector(".entry-header");
 
@@ -33,5 +34,18 @@ burgerLinks.forEach((link) => {
     openedMenu.classList.remove("fixedMenu");
     navBar.classList.remove("fixedNavBar");
     hideEntryHeader.classList.remove("hidden");
+    hideFooter.classList.remove("hidden");
   });
+});
+// Closing the menu when clicking on the contact Link
+contactMobileLink.addEventListener("click", () => {
+  menuLine1.classList.remove("line1Transform");
+  menuLine2.classList.remove("hidden");
+  menuLine3.classList.remove("line3Transform");
+  buttonMenu.classList.remove("calibrateCross");
+  openedMenu.classList.remove("openingTheMenu");
+  openedMenu.classList.remove("fixedMenu");
+  navBar.classList.remove("fixedNavBar");
+  hideEntryHeader.classList.remove("hidden");
+  hideFooter.classList.remove("hidden");
 });

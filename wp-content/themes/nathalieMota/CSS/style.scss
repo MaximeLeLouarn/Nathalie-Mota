@@ -1,6 +1,7 @@
 // Colors palette
 $white: white;
 $black: black;
+$blackOpacity: rgba(0, 0, 0, 0.6);
 $darkRed: #e00000;
 $middleRed: #fe5858;
 $lightRed: #ffd6d6;
@@ -8,6 +9,7 @@ $darkBlue: #313144;
 $darkGrey: #c4c4c4;
 $mediumGrey: #d8d8d8;
 $lightGrey: #e5e5e5;
+$labelBorders: #b8bbc2;
 
 // Include the fonts
 @font-face {
@@ -109,6 +111,11 @@ p {
         line-height: 3.5rem;
         font-size: 48px;
     }
+}
+
+// active display
+.active {
+    display: flex !important;
 }
 
 // Designing the menu
@@ -218,7 +225,12 @@ header {
         padding-bottom: 10%;
         gap: 5%;
 
-        h2 {
+        .burgerLink a {
+            color: $white;
+            font-size: 44px;
+            font-style: normal;
+        }
+        .burgerLinkModal a {
             color: $white;
             font-size: 44px;
             font-style: normal;
@@ -328,6 +340,106 @@ footer#colophon {
 }
 
 // The contact modal
+
+.modalContactCf7 {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    background-color: $blackOpacity;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    .cf7Container {
+        box-sizing: border-box;
+        max-height: 80%;
+        max-width: 80%;
+        margin: 0 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
+
+        .XModal {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
+        img {
+            box-sizing: border-box;
+            object-fit: cover;
+            margin-bottom: 8%;
+            margin-top: 2%;
+        }
+        .formContainer {
+            box-sizing: border-box;
+            padding: 3% 10%;
+
+            form.wpcf7-form.init {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-family: "Poppins", sans-serif;
+                box-sizing: border-box;
+                font-size: 12px;
+                line-height: 18px;
+                font-weight: 500;
+                padding-bottom: 2%;
+                max-width: 100%;
+                color: $darkBlue;
+
+                input {
+                    width: 100%;
+                    padding: 8px;
+                    box-sizing: border-box;
+                }
+                textarea {
+                    width: 100%;
+                    padding: 8px;
+                    box-sizing: border-box;
+                }
+            }
+            .labelCategory1 {
+                border: solid $labelBorders 1px;
+                border-radius: 8px;
+                height: 40px;
+            }
+            .labelCategory2 {
+                border: solid $labelBorders 1px;
+                height: 149px;
+            }
+
+            input.wpcf7-form-control.wpcf7-submit.has-spinner {
+                font-family: "Space Mono", sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                width: 100%;
+                text-align: center;
+                border-radius: 2px;
+                background-color: $mediumGrey;
+                height: 50px;
+                border: none;
+                box-sizing: border-box;
+                padding: 8px;
+            }
+        }
+    }
+}
+
 /* Modal CSS */
 // .contactModal {
 //     display: none; /* Hidden by default */

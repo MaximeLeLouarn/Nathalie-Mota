@@ -24,6 +24,22 @@
 		?>
 	</nav>
 
+	<div class="modalContactCf7">
+		
+		<div class="cf7Container">
+			
+			<span class="XModal">&times;</span>
+			
+			<img src="<?= get_template_directory_uri() . '/assets/ContactHeader.png' ?>" alt="Contact">
+			
+			<div class="formContainer">
+				<?= do_shortcode('[contact-form-7 id="b3be6c6" title="Modale de Contact"]'); ?>
+			</div>
+
+		</div>
+
+	</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

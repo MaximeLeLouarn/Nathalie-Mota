@@ -101,6 +101,10 @@ p {
     font-size: 48px;
   }
 }
+.active {
+  display: flex !important;
+}
+
 header {
   height: 80px;
   display: flex;
@@ -198,7 +202,12 @@ header nav#site-navigation .headerMenusContainer .menu-menu-1-container ul#prima
   padding-bottom: 10%;
   gap: 5%;
 }
-.openedMenu ul#Mobile h2 {
+.openedMenu ul#Mobile .burgerLink a {
+  color: white;
+  font-size: 44px;
+  font-style: normal;
+}
+.openedMenu ul#Mobile .burgerLinkModal a {
   color: white;
   font-size: 44px;
   font-style: normal;
@@ -304,6 +313,100 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     align-items: center;
   }
 }
+.modalContactCf7 {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.modalContactCf7 .cf7Container {
+  box-sizing: border-box;
+  max-height: 80%;
+  max-width: 80%;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+.modalContactCf7 .cf7Container .XModal {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+.modalContactCf7 .cf7Container img {
+  box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 8%;
+  margin-top: 2%;
+}
+.modalContactCf7 .cf7Container .formContainer {
+  box-sizing: border-box;
+  padding: 3% 10%;
+}
+.modalContactCf7 .cf7Container .formContainer form.wpcf7-form.init {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.modalContactCf7 .cf7Container .formContainer label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  padding-bottom: 2%;
+  max-width: 100%;
+  color: #313144;
+}
+.modalContactCf7 .cf7Container .formContainer label input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.modalContactCf7 .cf7Container .formContainer label textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.modalContactCf7 .cf7Container .formContainer .labelCategory1 {
+  border: solid #b8bbc2 1px;
+  border-radius: 8px;
+  height: 40px;
+}
+.modalContactCf7 .cf7Container .formContainer .labelCategory2 {
+  border: solid #b8bbc2 1px;
+  height: 149px;
+}
+.modalContactCf7 .cf7Container .formContainer input.wpcf7-form-control.wpcf7-submit.has-spinner {
+  font-family: "Space Mono", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #d8d8d8;
+  height: 50px;
+  border: none;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
 /* Modal CSS */
 .firstContainerPhoto {
   margin-right: 8%;
