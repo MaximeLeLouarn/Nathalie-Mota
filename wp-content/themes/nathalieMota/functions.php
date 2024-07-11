@@ -144,6 +144,7 @@ function nathaliemota_scripts() {
 	wp_enqueue_style( 'nathaliemota-styleScss', get_template_directory_uri() . '/CSS/style.css', array(), _S_VERSION );
 	wp_style_add_data( 'nathaliemota-style', 'rtl', 'replace' );
 
+	wp_enqueue_script('importJQ', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js');
 	wp_enqueue_script( 'nathaliemota-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-burgerMenu', get_template_directory_uri() . '/js/burgerMenu.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-contactModal', get_template_directory_uri() . '/js/modal.js', array(), _S_VERSION, true );
@@ -195,3 +196,57 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 // 	return $post_link;
 // }
 // add_filter('post_type_link', 'replace_slug', 10, 2);
+
+
+// Setting up a function for random images
+// Function to get a random image ID from the media library
+function get_random_image_id() {
+    // Get all attachments from the media library
+    $args = array(
+        'post_type' => 'attachment',
+        'post_mime_type' => 'image',
+        'post_status' => 'inherit',
+        'posts_per_page' => -1, // Get all images
+    );
+
+    $query = new WP_Query($args);
+
+    // Check if any images found
+    if ($query->have_posts()) {
+        // Get all image IDs
+        $image_ids = array();
+        while ($query->have_posts()) {
+            $query->the_post();
+            $image_ids[] = get_the_ID();
+        }
+
+        // Reset post data
+        wp_reset_postdata();
+
+        // Return a random image ID
+        return $image_ids[array_rand($image_ids)];
+    }
+
+    // No images found
+    return false;
+}
+
+// Function to get the URL and alt text of a random image
+function get_random_image_url_and_alt() {
+    // Get the random image ID
+    $image_id = get_random_image_id(); 
+    
+    if (!$image_id) {
+        // If no image ID is found, return false
+        return false; 
+    }
+
+    // Get the image URL and alt text
+    $image_url = wp_get_attachment_url($image_id);
+    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
+    return array(
+        'url' => $image_url,
+        'alt' => $image_alt,
+    );
+}

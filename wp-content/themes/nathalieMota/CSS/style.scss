@@ -374,114 +374,163 @@ footer#colophon {
         img {
             box-sizing: border-box;
             object-fit: cover;
-            margin-bottom: 8%;
+            margin-bottom: 5%;
             margin-top: 2%;
         }
         .formContainer {
             box-sizing: border-box;
-            padding: 3% 10%;
+            width: 80%;
+            margin: auto;
 
-            form.wpcf7-form.init {
+            div#wpcf7-f51-o1 {
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                box-sizing: border-box;
-            }
 
-            label {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                font-family: "Poppins", sans-serif;
-                box-sizing: border-box;
-                font-size: 12px;
-                line-height: 18px;
-                font-weight: 500;
-                padding-bottom: 2%;
-                max-width: 100%;
-                color: $darkBlue;
-
-                input {
-                    width: 100%;
-                    padding: 8px;
+                form.wpcf7-form.init {
+                    padding-bottom: 12px;
+                    max-width: 400px;
+                    overflow-y: scroll;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                     box-sizing: border-box;
                 }
-                textarea {
-                    width: 100%;
-                    padding: 8px;
-                    box-sizing: border-box;
-                }
-            }
-            .labelCategory1 {
-                border: solid $labelBorders 1px;
-                border-radius: 8px;
-                height: 40px;
-            }
-            .labelCategory2 {
-                border: solid $labelBorders 1px;
-                height: 149px;
-            }
 
-            input.wpcf7-form-control.wpcf7-submit.has-spinner {
-                font-family: "Space Mono", sans-serif;
-                font-size: 12px;
-                font-weight: 400;
-                width: 100%;
-                text-align: center;
-                border-radius: 2px;
-                background-color: $mediumGrey;
-                height: 50px;
-                border: none;
-                box-sizing: border-box;
-                padding: 8px;
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    font-family: "Poppins", sans-serif;
+                    box-sizing: border-box;
+                    font-size: 12px;
+                    line-height: 18px;
+                    font-weight: 500;
+                    padding-bottom: 2%;
+                    max-width: 100%;
+                    color: $darkBlue;
+
+                    input {
+                        width: 100%;
+                        padding: 8px;
+                        box-sizing: border-box;
+                    }
+                    textarea {
+                        width: 100%;
+                        padding: 8px;
+                        box-sizing: border-box;
+                    }
+                }
+                .labelCategory1 {
+                    border: solid $labelBorders 1px;
+                    border-radius: 8px;
+                    height: 40px;
+                }
+                .labelCategory2 {
+                    border: solid $labelBorders 1px;
+                    height: 149px;
+                    overflow-y: scroll;
+                }
+
+                input.wpcf7-form-control.wpcf7-submit.has-spinner {
+                    font-family: "Space Mono", sans-serif;
+                    font-size: 12px;
+                    font-weight: 400;
+                    width: 100%;
+                    text-align: center;
+                    border-radius: 2px;
+                    background-color: $mediumGrey;
+                    height: 50px;
+                    border: none;
+                    box-sizing: border-box;
+                    padding: 16px 8px;
+                }
             }
         }
     }
 }
+.wpcf7-spinner {
+    display: none;
+}
+// Setting up de height responsiveness
+@media screen and (max-height: 660px) {
+    .modalContactCf7 {
+        .cf7Container {
+            // max-height: 80%;
+            // margin: 0 10%;
 
-/* Modal CSS */
-// .contactModal {
-//     display: none; /* Hidden by default */
-//     position: fixed; /* Stay in place */
-//     z-index: 1; /* Sit on top */
-//     left: 0;
-//     top: 0;
-//     width: 100%; /* Full width */
-//     height: 100%; /* Full height */
-//     overflow: auto; /* Enable scroll if needed */
-//     background-color: rgb(0, 0, 0); /* Fallback color */
-//     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-// }
+            .XModal {
+            }
+            img {
+                // margin-bottom: 5%;
+                // margin-top: 2%;
+            }
+            .formContainer {
+                // padding: 3% 10%;
 
-// .modalContent {
-//     background-color: #fefefe;
-//     margin: 15% auto; /* 15% from the top and centered */
-//     padding: 20px;
-//     border: 1px solid #888;
-//     width: 80%; /* Could be more or less, depending on screen size */
-// }
+                form.wpcf7-form.init {
+                }
 
-// .close {
-//     color: #aaa;
-//     float: right;
-//     font-size: 28px;
-//     font-weight: bold;
-// }
+                label {
+                    // gap: 8px;
+                    // line-height: 18px;
+                    // padding-bottom: 2%;
 
-// .close:hover,
-// .close:focus {
-//     color: black;
-//     text-decoration: none;
-//     cursor: pointer;
-// }
+                    input {
+                        // padding: 8px;
+                    }
+                    textarea {
+                        // padding: 8px;
+                    }
+                }
+                .labelCategory1 {
+                    // border-radius: 8px;
+                    height: 32px;
+                }
+                .labelCategory2 {
+                    height: 88px;
+                }
+
+                input.wpcf7-form-control.wpcf7-submit.has-spinner {
+                    height: 42px;
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-height: 545px) {
+    .cf7Container {
+        max-height: 92% !important;
+    }
+}
+@media screen and (max-height: 480px) {
+    .cf7Container {
+        max-height: 92% !important;
+
+        .labelCategory1 {
+            // border-radius: 8px;
+            height: 24px !important;
+        }
+        .labelCategory2 {
+            height: 64px !important;
+        }
+
+        input.wpcf7-form-control.wpcf7-submit.has-spinner {
+            height: 34px !important;
+            padding: 6px;
+        }
+    }
+}
 
 // Styling the photo post
 .firstContainerPhoto {
+    box-sizing: border-box;
     margin-right: 8%;
     margin-left: 8%;
     padding-top: 3%;
     .photoPost {
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         .imgPhoto {
@@ -499,15 +548,19 @@ footer#colophon {
     }
 }
 .phoneBorders {
+    box-sizing: border-box;
+    height: 118px;
     padding-bottom: 15px;
     padding-top: 15px;
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
 
     .contactContent {
+        box-sizing: border-box;
         margin: 0 8%;
 
         button {
+            box-sizing: border-box;
             margin-top: 10px;
             width: 100%;
             height: 50px;
@@ -532,6 +585,8 @@ footer#colophon {
     }
     .firstContainerPhoto {
         padding-top: 0;
+        max-height: calc(100vh - 198px);
+        display: flex;
         .photoPost {
             width: 100%;
             display: flex;
@@ -541,10 +596,12 @@ footer#colophon {
             align-items: flex-end;
             .imgPhoto {
                 width: 48%;
+                height: 100%;
 
                 img {
                     object-fit: contain;
                     max-width: 100%;
+                    max-height: 100%;
                 }
             }
             .photoInformations {
@@ -596,5 +653,15 @@ footer#colophon {
                 }
             }
         }
+    }
+}
+
+// Homepage
+.frontImage {
+    width: 100%;
+
+    img {
+        width: 100%;
+        object-fit: cover;
     }
 }
