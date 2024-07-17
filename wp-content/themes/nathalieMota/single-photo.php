@@ -58,12 +58,12 @@ get_header();
                     <div class="thumbnailNextArticle">
                         <?php $next_thumbnail_id = get_next_post_thumbnail_id();
                         if ($next_thumbnail_id && has_post_thumbnail()) {
-                            $thumbnail_url = wp_get_attachment_image_src( $next_thumbnail_id, 'full' )[0];
+                            $thumbnail_url = wp_get_attachment_image_src( $next_thumbnail_id, 'thumbnail' )[0];
                             $thumbnail_alt = get_post_meta( $next_thumbnail_id, '_wp_attachment_image_alt', true );
                         } else {
                             $previous_thumbnail_id = get_previous_post_thumbnail_id();
                             if ($previous_thumbnail_id && has_post_thumbnail()) {
-                                    $thumbnail_url = wp_get_attachment_image_src( $previous_thumbnail_id, 'full' )[0];
+                                    $thumbnail_url = wp_get_attachment_image_src( $previous_thumbnail_id, 'thumbnail' )[0];
                                     $thumbnail_alt = get_post_meta( $previous_thumbnail_id, '_wp_attachment_image_alt', true );
                             } 
                          }
@@ -99,8 +99,88 @@ get_header();
 
             <div class="otherImgsBox">
                 
-                <img class="otherImage1" src="" alt="">
-                <img class="otherImage2" src="" alt="">
+            <?php
+            // Get the current post ID
+            $currentPostId = get_the_ID();
+            // Get the categories of the current post
+            $termsC = get_the_terms($currentPostId, 'categorie');
+            $termsCIds = array();
+            if($termsC && !is_wp_error($termsC)) {
+                foreach($termsC as $terms) {
+                    $termsCIds[] = $terms->term_id;
+                }
+            }
+            // Query to get a post from the same category but not the current post
+            $argsC2P = array(
+                'post_type' => 'photo', // Replace with your custom post type
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'categorie',
+                        'field' => 'term_id',
+                        'terms' => $termsCIds,
+                    ),
+                ),
+                'post__not_in' => array($currentPostId),
+                'posts_per_page' => 1,
+                'orderby' => 'rand'
+            );
+
+            $queryCategoriesPhotos = new WP_Query($argsC2P);
+
+            if ($queryCategoriesPhotos->have_posts()) {
+                while ($queryCategoriesPhotos->have_posts()) {
+                    $queryCategoriesPhotos->the_post();
+            
+                    // Get the thumbnail URL of the post from the same category
+                    $thumbnailRCUrl = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                    ?>
+                    <img class="otherImage1" src="<?= esc_url($thumbnailRCUrl) ?>" alt="<?= esc_attr(get_the_title()) ?>">
+                    <?php
+                    $firstPostId = get_the_ID();
+                }
+                // Reset post data
+                wp_reset_postdata();
+                
+            } else {
+                // Debug output: No terms found
+                echo 'Plus de posts à venir';
+            }
+            ?>
+            <!-- With the same method, get the second image, just adding the exclusion of the first image to not have it repeated -->
+            <?php
+             $argsC2P2 = array(
+            'post_type' => 'photo', // Replace with your actual custom post type
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'categorie',
+                    'field' => 'term_id',
+                    'terms' => $termsCIds,
+                ),
+            ),
+            'post__not_in' => array($currentPostId, $firstPostId),
+            'posts_per_page' => 1,
+            'orderby' => 'rand'
+        );
+
+        $queryCategoriesPhotos2 = new WP_Query($argsC2P2);
+
+        if ($queryCategoriesPhotos2->have_posts()) {
+            while ($queryCategoriesPhotos2->have_posts()) {
+                $queryCategoriesPhotos2->the_post();
+
+                // Get the thumbnail URL of the post from the same category
+                $thumbnailRCUrl2 = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                ?>
+                <img class="otherImage2" src="<?= esc_url($thumbnailRCUrl2) ?>" alt="<?= esc_attr(get_the_title()) ?>">
+                <?php
+            }
+            // Reset post data for the second query
+            wp_reset_postdata();
+        } else {
+            // Debug output: No second post found
+            echo 'Plus de posts à venir';
+        }
+        ?>
             </div>
 
         </div>

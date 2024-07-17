@@ -608,6 +608,9 @@ footer#colophon {
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
+            gap: 24px;
+            max-width: 318px;
+            max-height: 280px;
 
             img {
                 object-fit: contain;
@@ -753,8 +756,11 @@ footer#colophon {
             }
             .otherImgsBox {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 box-sizing: border-box;
+                gap: 24px;
+                max-width: 318px;
+                max-height: 280px;
 
                 img {
                     object-fit: contain;
