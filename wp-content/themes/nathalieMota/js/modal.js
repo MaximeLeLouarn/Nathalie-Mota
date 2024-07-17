@@ -28,3 +28,22 @@ contactDiv.addEventListener("click", (event) => {
     contactDiv.classList.remove("active");
   }
 });
+
+// With the contact btn from the posts
+// Get all contact buttons
+const contactButtons = document.querySelectorAll(".postContactBtn");
+
+// Add click event listener to each button
+contactButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Get the data-ref value from the clicked button
+    var refValue = this.getAttribute("data-ref");
+
+    // Find the CF7 hidden field and set its value
+    var preWrittenField = document.getElementById("preWritten");
+    if (preWrittenField) {
+      preWrittenField.value = refValue;
+    }
+    contactDiv.classList.add("active");
+  });
+});

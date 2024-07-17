@@ -111,6 +111,7 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 header nav#site-navigation {
   width: 100%;
@@ -337,6 +338,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   flex-direction: column;
   justify-content: center;
   background-color: white;
+  overflow-y: scroll;
 }
 .modalContactCf7 .cf7Container .XModal {
   display: flex;
@@ -362,7 +364,6 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 .modalContactCf7 .cf7Container .formContainer div#wpcf7-f51-o1 form.wpcf7-form.init {
   padding-bottom: 12px;
   max-width: 400px;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -468,15 +469,24 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   flex-direction: column;
 }
 .firstContainerPhoto .photoPost .photoInformations {
+  text-transform: uppercase;
   padding-top: 15px;
   padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.firstContainerPhoto .photoPost .photoInformations h2 {
+  display: inline-block;
 }
 .firstContainerPhoto .photoPost .photoInformations p {
+  display: inline-block;
   padding-top: 5px;
 }
 
 .phoneBorders {
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
   height: 118px;
   padding-bottom: 15px;
   padding-top: 15px;
@@ -485,9 +495,18 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 }
 .phoneBorders .contactContent {
   box-sizing: border-box;
+  width: 100%;
   margin: 0 8%;
+  display: flex;
+  justify-content: center;
 }
-.phoneBorders .contactContent button {
+.phoneBorders .contactContent .pContactButton {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+}
+.phoneBorders .contactContent .pContactButton button {
   box-sizing: border-box;
   margin-top: 10px;
   width: 100%;
@@ -495,9 +514,32 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   text-align: center;
   border-radius: 2px;
   border: none;
+  cursor: pointer;
 }
 .phoneBorders .contactContent .desktopPhotoNav {
   display: none;
+}
+
+.otherPhotos {
+  margin: 2% 8%;
+  box-sizing: border-box;
+}
+.otherPhotos .otherPhotosContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.otherPhotos .otherPhotosContainer h3 {
+  text-align: center;
+}
+.otherPhotos .otherPhotosContainer .otherImgsBox {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.otherPhotos .otherPhotosContainer .otherImgsBox img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @media screen and (min-width: 768px) {
@@ -532,6 +574,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     max-height: 100%;
   }
   .firstContainerPhoto .photoPost .photoInformations {
+    text-transform: uppercase;
     width: 48%;
     padding-top: 0px;
     padding-bottom: 30px;
@@ -540,7 +583,11 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     flex-direction: column;
     justify-content: flex-end;
   }
+  .firstContainerPhoto .photoPost .photoInformations h2 {
+    display: inline-block;
+  }
   .firstContainerPhoto .photoPost .photoInformations p {
+    display: inline-block;
     padding-top: 5px;
   }
   .phoneBorders {
@@ -552,6 +599,8 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   .phoneBorders .contactContent {
     height: 110px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 4%;
     margin-right: 8%;
@@ -560,6 +609,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   .phoneBorders .contactContent .pContactButton {
     width: 48%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
@@ -571,11 +621,63 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     border-radius: 2px;
     border: none;
   }
-  .phoneBorders .contactContent .pContactButton .desktopPhotoNav {
+  .phoneBorders .contactContent .desktopPhotoNav {
     width: 48%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .phoneBorders .contactContent .desktopPhotoNav .closeArticles {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 81px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  .phoneBorders .contactContent .desktopPhotoNav .closeArticles .thumbnailNextArticle {
+    width: 100%;
+    height: 71px;
+    display: flex;
+    justify-content: center;
+  }
+  .phoneBorders .contactContent .desktopPhotoNav .closeArticles .thumbnailNextArticle img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .phoneBorders .contactContent .desktopPhotoNav .closeArticles .nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .phoneBorders .contactContent .desktopPhotoNav .closeArticles .nav-links .nav-title {
+    display: block;
+    width: 25px;
+  }
+  .phoneBorders .contactContent .desktopPhotoNav .closeArticles .nav-links .nav-next .nav-title {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .otherPhotos {
+    margin: 2% 8%;
+    box-sizing: border-box;
+  }
+  .otherPhotos .otherPhotosContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .otherPhotos .otherPhotosContainer h3 {
+    text-align: center;
+  }
+  .otherPhotos .otherPhotosContainer .otherImgsBox {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .otherPhotos .otherPhotosContainer .otherImgsBox img {
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 .frontImage {

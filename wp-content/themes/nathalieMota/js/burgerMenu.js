@@ -21,7 +21,6 @@ buttonMenu.addEventListener("click", () => {
   openedMenu.classList.toggle("fixedMenu");
   navBar.classList.toggle("fixedNavBar");
   hideFooter.classList.toggle("hidden");
-  hideEntryHeader.classList.toggle("hidden");
 });
 // Closing the menu when clicking on links
 burgerLinks.forEach((link) => {
@@ -33,7 +32,6 @@ burgerLinks.forEach((link) => {
     openedMenu.classList.remove("openingTheMenu");
     openedMenu.classList.remove("fixedMenu");
     navBar.classList.remove("fixedNavBar");
-    hideEntryHeader.classList.remove("hidden");
     hideFooter.classList.remove("hidden");
   });
 });
@@ -46,6 +44,5 @@ contactMobileLink.addEventListener("click", () => {
   openedMenu.classList.remove("openingTheMenu");
   openedMenu.classList.remove("fixedMenu");
   navBar.classList.remove("fixedNavBar");
-  hideEntryHeader.classList.remove("hidden");
   hideFooter.classList.remove("hidden");
 });

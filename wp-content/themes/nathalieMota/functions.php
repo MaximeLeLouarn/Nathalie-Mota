@@ -250,3 +250,38 @@ function get_random_image_url_and_alt() {
         'alt' => $image_alt,
     );
 }
+
+// Get the thumbnail of the next post
+function get_next_post_thumbnail_id() {
+    // Get the next post object
+    $next_post = get_adjacent_post(false, '', false);
+    
+    // Check if there is a next post
+    if ($next_post) {
+        // Get the thumbnail ID of the next post
+        $thumbnail_id = get_post_thumbnail_id($next_post->ID);
+        
+        // Return the thumbnail ID
+        return $thumbnail_id;
+    }
+    
+    // Return false if there is no next post
+    return false;
+}
+// Get the thumbnail of the previous post
+function get_previous_post_thumbnail_id() {
+    // Get the previous post object
+    $previous_post = get_adjacent_post(false, '', true);
+    
+    // Check if there is a next post
+    if ($previous_post) {
+        // Get the thumbnail ID of the previous post
+        $thumbnail_id = get_post_thumbnail_id($previous_post->ID);
+        
+        // Return the thumbnail ID
+        return $thumbnail_id;
+    }
+    
+    // Return false if there is no previous post
+    return false;
+}

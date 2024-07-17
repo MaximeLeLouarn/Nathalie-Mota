@@ -125,6 +125,7 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: $white;
 
     nav#site-navigation {
         width: 100%;
@@ -365,6 +366,7 @@ footer#colophon {
         flex-direction: column;
         justify-content: center;
         background-color: $white;
+        overflow-y: scroll;
 
         .XModal {
             display: flex;
@@ -389,7 +391,6 @@ footer#colophon {
                 form.wpcf7-form.init {
                     padding-bottom: 12px;
                     max-width: 400px;
-                    overflow-y: scroll;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -538,10 +539,17 @@ footer#colophon {
             flex-direction: column;
         }
         .photoInformations {
+            text-transform: uppercase;
             padding-top: 15px;
             padding-bottom: 15px;
+            display: flex;
+            flex-direction: column;
 
+            h2 {
+                display: inline-block;
+            }
             p {
+                display: inline-block;
                 padding-top: 5px;
             }
         }
@@ -549,6 +557,8 @@ footer#colophon {
 }
 .phoneBorders {
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     height: 118px;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -557,20 +567,51 @@ footer#colophon {
 
     .contactContent {
         box-sizing: border-box;
+        width: 100%;
         margin: 0 8%;
+        display: flex;
+        justify-content: center;
 
-        button {
-            box-sizing: border-box;
-            margin-top: 10px;
-            width: 100%;
-            height: 50px;
-            text-align: center;
-            border-radius: 2px;
-            border: none;
+        .pContactButton {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 80%;
+
+            button {
+                box-sizing: border-box;
+                margin-top: 10px;
+                width: 100%;
+                height: 50px;
+                text-align: center;
+                border-radius: 2px;
+                border: none;
+                cursor: pointer;
+            }
         }
-
         .desktopPhotoNav {
             display: none;
+        }
+    }
+}
+.otherPhotos {
+    margin: 2% 8%;
+    box-sizing: border-box;
+    .otherPhotosContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+            text-align: center;
+        }
+        .otherImgsBox {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+
+            img {
+                object-fit: contain;
+            }
         }
     }
 }
@@ -605,6 +646,7 @@ footer#colophon {
                 }
             }
             .photoInformations {
+                text-transform: uppercase;
                 width: 48%;
                 padding-top: 0px;
                 padding-bottom: 30px;
@@ -613,7 +655,11 @@ footer#colophon {
                 flex-direction: column;
                 justify-content: flex-end;
 
+                h2 {
+                    display: inline-block;
+                }
                 p {
+                    display: inline-block;
                     padding-top: 5px;
                 }
             }
@@ -628,6 +674,8 @@ footer#colophon {
         .contactContent {
             height: 110px;
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
             gap: 4%;
             margin-right: 8%;
@@ -635,6 +683,7 @@ footer#colophon {
             .pContactButton {
                 width: 48%;
                 display: flex;
+                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
                 button {
@@ -645,11 +694,70 @@ footer#colophon {
                     border-radius: 2px;
                     border: none;
                 }
-                .desktopPhotoNav {
-                    width: 48%;
+            }
+            .desktopPhotoNav {
+                width: 48%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .closeArticles {
                     display: flex;
-                    justify-content: flex-end;
+                    flex-direction: column;
                     align-items: center;
+                    width: 81px;
+                    gap: 10px;
+                    box-sizing: border-box;
+
+                    .thumbnailNextArticle {
+                        width: 100%;
+                        height: 71px;
+                        display: flex;
+                        justify-content: center;
+
+                        img {
+                            max-height: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                    .nav-links {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: row;
+
+                        .nav-title {
+                            display: block;
+                            width: 25px;
+                        }
+
+                        .nav-next {
+                            .nav-title {
+                                display: flex;
+                                justify-content: flex-end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .otherPhotos {
+        margin: 2% 8%;
+        box-sizing: border-box;
+        .otherPhotosContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h3 {
+                text-align: center;
+            }
+            .otherImgsBox {
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+
+                img {
+                    object-fit: contain;
                 }
             }
         }
