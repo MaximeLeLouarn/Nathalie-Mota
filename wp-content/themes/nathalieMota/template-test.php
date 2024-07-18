@@ -35,6 +35,7 @@ get_header();
                 <select id="filter1" class="dropdown">
             <option value="all">All</option>
             <option value="option1">Option 1</option>
+            </select>
 
             </div>
 
@@ -44,6 +45,7 @@ get_header();
                 <select id="filter2" class="dropdown">
             <option value="all">All</option>
             <option value="option1">Option 1</option>
+            </select>
 
             </div>
 
@@ -53,6 +55,8 @@ get_header();
                 <select id="filter3" class="dropdown">
             <option value="all">All</option>
             <option value="option1">Option 1</option>
+
+            </select>
 
             </div>
 

@@ -282,3 +282,15 @@ Stack trace:
 [17-Jul-2024 19:21:28 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
 [17-Jul-2024 19:21:28 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
 [17-Jul-2024 19:21:28 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[18-Jul-2024 09:15:40 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 160
+[18-Jul-2024 09:15:40 UTC] PHP Stack trace:
+[18-Jul-2024 09:15:40 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[18-Jul-2024 09:15:40 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[18-Jul-2024 09:15:40 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[18-Jul-2024 09:15:40 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[18-Jul-2024 10:00:56 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 161
+[18-Jul-2024 10:00:56 UTC] PHP Stack trace:
+[18-Jul-2024 10:00:56 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[18-Jul-2024 10:00:56 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[18-Jul-2024 10:00:56 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[18-Jul-2024 10:00:56 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106

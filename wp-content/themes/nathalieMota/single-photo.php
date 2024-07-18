@@ -122,7 +122,8 @@ get_header();
                 ),
                 'post__not_in' => array($currentPostId),
                 'posts_per_page' => 1,
-                'orderby' => 'rand'
+                'orderby' => 'rand',
+                // 'order' => 'variable qui prend ASC ou DESC'
             );
 
             $queryCategoriesPhotos = new WP_Query($argsC2P);

@@ -614,8 +614,8 @@ footer#colophon {
             margin-bottom: 10px;
 
             img {
-                max-width: 318px;
-                max-height: 280px;
+                aspect-ratio: 1/1;
+                width: 95%;
                 object-fit: cover;
             }
         }
@@ -765,10 +765,33 @@ footer#colophon {
 
                 img {
                     object-fit: cover;
-                    max-width: 564px;
-                    max-height: 495px;
+                    aspect-ratio: 1/1;
+                    width: 300px;
                 }
             }
+        }
+    }
+}
+@media screen and (min-width: 1000px) {
+    .otherImgsBox {
+        img {
+            width: 400px !important;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    .otherImgsBox {
+        gap: 40px !important;
+
+        img {
+            width: 500px !important;
+        }
+    }
+}
+@media screen and (min-width: 1400px) {
+    .otherImgsBox {
+        img {
+            width: 600px !important;
         }
     }
 }
@@ -782,7 +805,7 @@ footer#colophon {
     justify-content: center;
 
     img {
-        object-fit: contain;
+        object-fit: cover;
         width: 100%;
     }
 }
