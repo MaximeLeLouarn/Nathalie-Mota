@@ -1,6 +1,7 @@
 <?php
 
 get_header();
+
 ?>
 
 <main id="primary" class="site-main">
@@ -56,19 +57,39 @@ get_header();
                 <div class="closeArticles">
 
                     <div class="thumbnailNextArticle">
-                        <?php $next_thumbnail_id = get_next_post_thumbnail_id();
+                        <?php 
+                        // Get the current post thumbnail
+                        if (has_post_thumbnail()) {
+                            $current_thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                            $current_thumbnail_alt = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_wp_attachment_image_alt', true);
+                        }
+                        // Get the next post thumbnail
+                        $next_thumbnail_id = get_next_post_thumbnail_id();
                         if ($next_thumbnail_id && has_post_thumbnail()) {
-                            $thumbnail_url = wp_get_attachment_image_src( $next_thumbnail_id, 'thumbnail' )[0];
-                            $thumbnail_alt = get_post_meta( $next_thumbnail_id, '_wp_attachment_image_alt', true );
+                            $next_thumbnail_url = wp_get_attachment_image_src( $next_thumbnail_id, 'thumbnail' )[0];
+                            $next_thumbnail_alt = get_post_meta( $next_thumbnail_id, '_wp_attachment_image_alt', true );
                         } else {
-                            $previous_thumbnail_id = get_previous_post_thumbnail_id();
-                            if ($previous_thumbnail_id && has_post_thumbnail()) {
-                                    $thumbnail_url = wp_get_attachment_image_src( $previous_thumbnail_id, 'thumbnail' )[0];
-                                    $thumbnail_alt = get_post_meta( $previous_thumbnail_id, '_wp_attachment_image_alt', true );
-                            } 
+                            $next_thumbnail_url = $current_thumbnail_url;
+                            $next_thumbnail_alt = $current_thumbnail_alt;
                          }
+                        // Get the previous post thumbnail
+                        $previous_thumbnail_id = get_previous_post_thumbnail_id();
+                        if ($previous_thumbnail_id && has_post_thumbnail()) {
+                            $previous_thumbnail_url = wp_get_attachment_image_src( $previous_thumbnail_id, 'thumbnail' )[0];
+                            $previous_thumbnail_alt = get_post_meta( $previous_thumbnail_id, '_wp_attachment_image_alt', true );
+                         } else {
+                            $previous_thumbnail_url = $current_thumbnail_url;
+                            $previous_thumbnail_alt = $current_thumbnail_alt;
+                         }
+
                         ?>
-                       <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>" />
+                       <img id="currentThumbnail" src="<?php echo esc_url($current_thumbnail_url); ?>" alt="<?php echo esc_attr($current_thumbnail_alt); ?>"
+                        data-current-thumbnail="<?php echo esc_url($current_thumbnail_url); ?>"
+                        data-current-thumbnail-alt="<?php echo esc_attr($current_thumbnail_alt); ?>"
+                        data-next-thumbnail="<?php echo esc_url($next_thumbnail_url); ?>"
+                        data-next-thumbnail-alt="<?php echo esc_attr($next_thumbnail_alt); ?>"
+                        data-prev-thumbnail="<?php echo esc_url($previous_thumbnail_url); ?>"
+                        data-prev-thumbnail-alt="<?php echo esc_attr($previous_thumbnail_alt); ?>" />
 
                     </div>
 
@@ -78,8 +99,8 @@ get_header();
             
                         the_post_navigation(
                             array(
-                                'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'nathaliemota' ) . '</span> <span class="nav-title">&#8592;</span>',
-                                'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'nathaliemota' ) . '</span> <span class="nav-title">&#8594;</span>',
+                                'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'nathaliemota' ) . '</span> <span class="nav-title nav-prev">&#8592;</span>',
+                                'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'nathaliemota' ) . '</span> <span class="nav-title nav-next">&#8594;</span>',
                             )
                         );
             
@@ -135,7 +156,7 @@ get_header();
                     // Get the thumbnail URL of the post from the same category
                     $thumbnailRCUrl = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     ?>
-                    <img class="otherImage1" src="<?= esc_url($thumbnailRCUrl) ?>" alt="<?= esc_attr(get_the_title()) ?>">
+                    <img class="otherImage1 photoBox" src="<?= esc_url($thumbnailRCUrl) ?>" alt="<?= esc_attr(get_the_title()) ?>">
                     <?php
                     $firstPostId = get_the_ID();
                 }
@@ -172,7 +193,7 @@ get_header();
                 // Get the thumbnail URL of the post from the same category
                 $thumbnailRCUrl2 = get_the_post_thumbnail_url(get_the_ID(), 'full');
                 ?>
-                <img class="otherImage2" src="<?= esc_url($thumbnailRCUrl2) ?>" alt="<?= esc_attr(get_the_title()) ?>">
+                <img class="otherImage2 photoBox" src="<?= esc_url($thumbnailRCUrl2) ?>" alt="<?= esc_attr(get_the_title()) ?>">
                 <?php
             }
             // Reset post data for the second query
@@ -192,5 +213,6 @@ get_header();
 </main>
 
 <?php
+
 get_sidebar();
 get_footer();

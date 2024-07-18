@@ -532,7 +532,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 }
 .otherPhotos .otherPhotosContainer h3 {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .otherPhotos .otherPhotosContainer .otherImgsBox {
   display: flex;
@@ -541,8 +541,8 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   gap: 24px;
   margin-bottom: 10px;
 }
-.otherPhotos .otherPhotosContainer .otherImgsBox img {
-  aspect-ratio: 1/1;
+.otherPhotos .otherPhotosContainer .otherImgsBox .photoBox {
+  aspect-ratio: 1.88/1.65;
   width: 95%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -682,10 +682,10 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     box-sizing: border-box;
     gap: 24px;
   }
-  .otherPhotos .otherPhotosContainer .otherImgsBox img {
+  .otherPhotos .otherPhotosContainer .otherImgsBox .photoBox {
     -o-object-fit: cover;
        object-fit: cover;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1.88/1.65;
     width: 300px;
   }
 }
@@ -698,12 +698,12 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   .otherImgsBox {
     gap: 40px !important;
   }
-  .otherImgsBox img {
+  .otherImgsBox .photoBox {
     width: 500px !important;
   }
 }
 @media screen and (min-width: 1400px) {
-  .otherImgsBox img {
+  .otherImgsBox .photoBox {
     width: 600px !important;
   }
 }

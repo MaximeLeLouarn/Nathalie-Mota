@@ -29,36 +29,35 @@ get_header();
 
         <div class="filters">
 
-            <div class="dropdown dropdown1">
+        <div class="dropdown">
+        <button class="dropbtn">Filter Options</button>
+        <div class="dropdown-content">
+            <ul>
+                <li>Filter 1
+                    <ul class="submenu">
+                        <li><input type="checkbox" id="filter1a" name="filter1a"><label for="filter1a">Option 1a</label></li>
+                        <li><input type="checkbox" id="filter1b" name="filter1b"><label for="filter1b">Option 1b</label></li>
+                        <li><input type="checkbox" id="filter1c" name="filter1c"><label for="filter1c">Option 1c</label></li>
+                    </ul>
+                </li>
+                <li>Filter 2
+                    <ul class="submenu">
+                        <li><input type="checkbox" id="filter2a" name="filter2a"><label for="filter2a">Option 2a</label></li>
+                        <li><input type="checkbox" id="filter2b" name="filter2b"><label for="filter2b">Option 2b</label></li>
+                        <li><input type="checkbox" id="filter2c" name="filter2c"><label for="filter2c">Option 2c</label></li>
+                    </ul>
+                </li>
+                <li>Filter 3
+                    <ul class="submenu">
+                        <li><input type="checkbox" id="filter3a" name="filter3a"><label for="filter3a">Option 3a</label></li>
+                        <li><input type="checkbox" id="filter3b" name="filter3b"><label for="filter3b">Option 3b</label></li>
+                        <li><input type="checkbox" id="filter3c" name="filter3c"><label for="filter3c">Option 3c</label></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-                <label for="filter1">Formats</label>
-                <select id="filter1" class="dropdown">
-            <option value="all">All</option>
-            <option value="option1">Option 1</option>
-            </select>
-
-            </div>
-
-            <div class="dropdown dropdown2">
-
-            <label for="filter2">Catégories</label>
-                <select id="filter2" class="dropdown">
-            <option value="all">All</option>
-            <option value="option1">Option 1</option>
-            </select>
-
-            </div>
-
-            <div class="dropdown dropdown3">
-
-            <label for="filter3">Trier par</label>
-                <select id="filter3" class="dropdown">
-            <option value="all">All</option>
-            <option value="option1">Option 1</option>
-
-            </select>
-
-            </div>
 
         </div>
 
