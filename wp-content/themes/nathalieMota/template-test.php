@@ -5,7 +5,6 @@ Template Name: Prototype
 get_header();
 ?>
 
-<h1><?php the_title(); ?></h1>
 <!-- Content -->
 <main id="primary" class="site-main">
 
@@ -27,7 +26,38 @@ get_header();
     </section>
 
     <section class="filters&Images">
-        <div class="filters"></div>
+
+        <div class="filters">
+
+            <div class="dropdown dropdown1">
+
+                <label for="filter1">Formats</label>
+                <select id="filter1" class="dropdown">
+            <option value="all">All</option>
+            <option value="option1">Option 1</option>
+
+            </div>
+
+            <div class="dropdown dropdown2">
+
+            <label for="filter2">Catégories</label>
+                <select id="filter2" class="dropdown">
+            <option value="all">All</option>
+            <option value="option1">Option 1</option>
+
+            </div>
+
+            <div class="dropdown dropdown3">
+
+            <label for="filter3">Trier par</label>
+                <select id="filter3" class="dropdown">
+            <option value="all">All</option>
+            <option value="option1">Option 1</option>
+
+            </div>
+
+        </div>
+
         <div class="images"></div>
     </section>
 

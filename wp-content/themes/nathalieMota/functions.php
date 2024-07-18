@@ -214,17 +214,17 @@ function get_random_image_id() {
     // Check if any images found
     if ($query->have_posts()) {
         // Get all image IDs
-        $image_ids = array();
+        $imageIds = array();
         while ($query->have_posts()) {
             $query->the_post();
-            $image_ids[] = get_the_ID();
+            $imageIds[] = get_the_ID();
         }
 
         // Reset post data
         wp_reset_postdata();
 
         // Return a random image ID
-        return $image_ids[array_rand($image_ids)];
+        return $imageIds[array_rand($imageIds)];
     }
 
     // No images found
@@ -234,32 +234,32 @@ function get_random_image_id() {
 // Function to get the URL and alt text of a random image
 function get_random_image_url_and_alt() {
     // Get the random image ID
-    $image_id = get_random_image_id(); 
+    $imageId = get_random_image_id(); 
     
-    if (!$image_id) {
+    if (!$imageId) {
         // If no image ID is found, return false
         return false; 
     }
 
     // Get the image URL and alt text
-    $image_url = wp_get_attachment_url($image_id);
-    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+    $imageUrl = wp_get_attachment_url($imageId);
+    $imageAlt = get_post_meta($imageId, '_wp_attachment_image_alt', true);
 
     return array(
-        'url' => $image_url,
-        'alt' => $image_alt,
+        'url' => $imageUrl,
+        'alt' => $imageAlt,
     );
 }
 
 // Get the thumbnail of the next post
 function get_next_post_thumbnail_id() {
     // Get the next post object
-    $next_post = get_adjacent_post(false, '', false);
+    $nextPost = get_adjacent_post(false, '', false);
     
     // Check if there is a next post
-    if ($next_post) {
+    if ($nextPost) {
         // Get the thumbnail ID of the next post
-        $thumbnail_id = get_post_thumbnail_id($next_post->ID);
+        $thumbnail_id = get_post_thumbnail_id($nextPost->ID);
         
         // Return the thumbnail ID
         return $thumbnail_id;
@@ -271,12 +271,12 @@ function get_next_post_thumbnail_id() {
 // Get the thumbnail of the previous post
 function get_previous_post_thumbnail_id() {
     // Get the previous post object
-    $previous_post = get_adjacent_post(false, '', true);
+    $previousPost = get_adjacent_post(false, '', true);
     
     // Check if there is a next post
-    if ($previous_post) {
+    if ($previousPost) {
         // Get the thumbnail ID of the previous post
-        $thumbnail_id = get_post_thumbnail_id($previous_post->ID);
+        $thumbnail_id = get_post_thumbnail_id($previousPost->ID);
         
         // Return the thumbnail ID
         return $thumbnail_id;
