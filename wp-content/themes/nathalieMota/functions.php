@@ -149,6 +149,7 @@ function nathaliemota_scripts() {
 	wp_enqueue_script( 'nathaliemota-burgerMenu', get_template_directory_uri() . '/js/burgerMenu.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-contactModal', get_template_directory_uri() . '/js/modal.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-thumbnailsNavigatip,', get_template_directory_uri() . '/js/thumbnailsNav.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nathaliemota-dropdownMenus,', get_template_directory_uri() . '/js/dropdownMenus.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -286,3 +287,50 @@ function get_previous_post_thumbnail_id() {
     // Return false if there is no previous post
     return false;
 }
+
+// Get the category taxonomies 
+// function get_category_taxonomies() {
+// 	// Get all taxonomies associated with the 'category' custom post type
+//     $taxonomies = array(
+// 				// Replace with your custom post type
+// 				'post_type' => 'photo', 
+// 				// Display all the posts
+// 				'posts_per_page' => -1,
+// 				'tax_query' => array(
+// 					array(
+// 						'taxonomy' => 'categorie',
+// 						'field' => 'slug',
+// 						)
+// 					)
+// 				);
+		
+// 	$query = new WP_Query($args);
+// 	// Initialize an empty array to store taxonomy details
+//     $output = array();
+
+// 	if ($query->have_posts()) {
+//         while ($query->have_posts()) {
+//             $query->the_post();
+
+//             // Get taxonomies associated with the current post
+//             $post_taxonomies = get_post_taxonomies(get_the_ID());
+
+//             foreach ($post_taxonomies as $taxonomy) {
+//                 $taxonomy_object = get_taxonomy($taxonomy);
+//                 $output[] = array(
+//                     'name' => $taxonomy_object->labels->name,
+//                     'slug' => $taxonomy_object->name,
+//                 );
+//             }
+//         }
+//         wp_reset_postdata();
+//     }
+
+//     // Remove duplicate taxonomies
+//     $output = array_unique($output, SORT_REGULAR);
+
+//     // Debugging: Print the output to verify it's correct
+//     error_log(print_r($output, true));
+
+//     return $output;
+// }

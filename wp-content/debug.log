@@ -1,0 +1,45 @@
+[18-Jul-2024 16:15:09 UTC] Array
+(
+)
+
+[18-Jul-2024 16:19:02 UTC] Array
+(
+)
+
+[18-Jul-2024 16:19:22 UTC] Array
+(
+)
+
+[18-Jul-2024 16:49:01 UTC] PHP Warning:  Undefined variable $args in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 307
+[18-Jul-2024 16:49:01 UTC] PHP Stack trace:
+[18-Jul-2024 16:49:01 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[18-Jul-2024 16:49:01 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[18-Jul-2024 16:49:01 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[18-Jul-2024 16:49:01 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[18-Jul-2024 16:49:01 UTC] PHP   5. get_category_taxonomies() C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:40
+[18-Jul-2024 16:49:01 UTC] Array
+(
+)
+
+[18-Jul-2024 16:49:19 UTC] PHP Warning:  Undefined variable $args in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 307
+[18-Jul-2024 16:49:19 UTC] PHP Stack trace:
+[18-Jul-2024 16:49:19 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[18-Jul-2024 16:49:19 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[18-Jul-2024 16:49:19 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[18-Jul-2024 16:49:19 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[18-Jul-2024 16:49:19 UTC] PHP   5. get_category_taxonomies() C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:40
+[18-Jul-2024 16:49:19 UTC] Array
+(
+)
+
+[18-Jul-2024 17:19:30 UTC] PHP Warning:  Undefined variable $args in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 307
+[18-Jul-2024 17:19:30 UTC] PHP Stack trace:
+[18-Jul-2024 17:19:30 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[18-Jul-2024 17:19:30 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[18-Jul-2024 17:19:30 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[18-Jul-2024 17:19:30 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[18-Jul-2024 17:19:30 UTC] PHP   5. get_category_taxonomies() C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:40
+[18-Jul-2024 17:19:30 UTC] Array
+(
+)
+

@@ -797,6 +797,7 @@ footer#colophon {
 }
 
 // Homepage
+// Hero Image
 .frontImage {
     box-sizing: border-box;
     max-width: 100%;
@@ -808,4 +809,123 @@ footer#colophon {
         object-fit: cover;
         width: 100%;
     }
+}
+// Filters
+.filtersImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filters {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    gap: 15px;
+
+    .catFor {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dropdownButton {
+        width: 270px;
+        border-radius: 8px;
+        border: 1.3px solid $labelBorders;
+        display: flex;
+        justify-content: space-between;
+        background-color: $white;
+        color: $black;
+        padding: 16px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        line-height: 18px;
+        cursor: pointer;
+
+        .arrow {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            border: 1.3px solid #215aff;
+        }
+        &:active {
+            border: 1.3px solid #215aff;
+        }
+    }
+
+    .dropdownContent {
+        width: 270px;
+        padding: 43px 0 10px 0;
+        display: none;
+        box-sizing: border-box;
+        position: absolute;
+        background-color: $white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        a {
+            padding-left: 24px;
+            display: flex;
+            align-items: center;
+            color: black;
+            height: 43px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: "Poppins", sans-serif;
+            line-height: 18px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $darkRed;
+                color: $white;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .filtersImages {
+        box-sizing: border-box;
+        margin: 0 5%;
+    }
+    .filters {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        gap: 4%;
+
+        .dropdownButton {
+            width: 48%;
+        }
+        .catFor {
+            box-sizing: border-box;
+            width: 48%;
+            gap: 4%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .filterContainer {
+            width: 48%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+// Interactive classes fetched by JS
+.activeBlock {
+    display: block !important;
+}
+.buttonBorderStyle {
+    border-radius: 8px 8px 0 0 !important;
 }

@@ -25,39 +25,65 @@ get_header();
 
     </section>
 
-    <section class="filters&Images">
+    <section class="filtersImages">
 
-        <div class="filters">
+            <div class="filters">
 
-        <div class="dropdown">
-        <button class="dropbtn">Filter Options</button>
-        <div class="dropdown-content">
-            <ul>
-                <li>Filter 1
-                    <ul class="submenu">
-                        <li><input type="checkbox" id="filter1a" name="filter1a"><label for="filter1a">Option 1a</label></li>
-                        <li><input type="checkbox" id="filter1b" name="filter1b"><label for="filter1b">Option 1b</label></li>
-                        <li><input type="checkbox" id="filter1c" name="filter1c"><label for="filter1c">Option 1c</label></li>
-                    </ul>
-                </li>
-                <li>Filter 2
-                    <ul class="submenu">
-                        <li><input type="checkbox" id="filter2a" name="filter2a"><label for="filter2a">Option 2a</label></li>
-                        <li><input type="checkbox" id="filter2b" name="filter2b"><label for="filter2b">Option 2b</label></li>
-                        <li><input type="checkbox" id="filter2c" name="filter2c"><label for="filter2c">Option 2c</label></li>
-                    </ul>
-                </li>
-                <li>Filter 3
-                    <ul class="submenu">
-                        <li><input type="checkbox" id="filter3a" name="filter3a"><label for="filter3a">Option 3a</label></li>
-                        <li><input type="checkbox" id="filter3b" name="filter3b"><label for="filter3b">Option 3b</label></li>
-                        <li><input type="checkbox" id="filter3c" name="filter3c"><label for="filter3c">Option 3c</label></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+                <div class="catFor">
 
+                        <button class="dropdownButton" id="dropdownButton">
+                            Catégorie <span class="arrow" id="arrow">&#9660;</span>
+                        </button>
+
+                        <div class="dropdownContent">
+                            <?php
+                            $getSubCategories = get_terms('categorie');
+
+                            if (!empty($getSubCategories) && !is_wp_error($getSubCategories)) {
+                                foreach ($getSubCategories as $getSubCategory) {
+                                    echo '<a href="# ' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
+                                }
+                            }
+                            ?>
+                        </div>
+
+                            <button class="dropdownButton" id="dropdownButton">
+                                format <span class="arrow" id="arrow">&#9660;</span>
+                            </button>
+
+                        <div class="dropdownContent">
+                            <?php
+                            $getSubFormats = get_terms('format');
+
+                            if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
+                                foreach ($getSubFormats as $getSubFormat) {
+                                    echo '<a href="# ' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                                }
+                            }
+                            ?>
+                        </div>
+                        
+                </div>
+
+                <div class="filterContainer">
+
+                        <button class="dropdownButton" id="dropdownButton">
+                            Trier par<span class="arrow" id="arrow">&#9660;</span>
+                        </button>
+
+                    <div class="dropdownContent">
+                        <?php
+                        $getSubFormats = get_terms('format');
+
+                        if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
+                            foreach ($getSubFormats as $getSubFormat) {
+                                echo '<a href="# ' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                            }
+                        }
+                        ?>
+                </div>
+
+            </div>
 
         </div>
 
