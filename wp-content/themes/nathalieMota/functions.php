@@ -288,6 +288,48 @@ function get_previous_post_thumbnail_id() {
     return false;
 }
 
+// Get the images of the photo posts + their informations
+function get_custom_posts_with_images() {
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+            array(
+                'key' => 'categorie',
+                'value' => '',
+                'compare' => '!='
+            ),
+            array(
+                'key' => 'format',
+                'value' => '',
+                'compare' => '!='
+            )
+        )
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $posts = array();
+        while ($query->have_posts()) {
+            $query->the_post();
+            $posts[] = array(
+                'title' => get_the_title(),
+                'image' => get_the_post_thumbnail_url(),
+                'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
+                'categorie' => get_field('categorie'),
+                'format' => get_field('format'),
+                'year' => get_the_date('Y')
+            );
+        }
+        wp_reset_postdata();
+        return $posts;
+    } else {
+        return array();
+    }
+}
+
+
 // Get the category taxonomies 
 // function get_category_taxonomies() {
 // 	// Get all taxonomies associated with the 'category' custom post type

@@ -30,6 +30,7 @@ get_header();
             <div class="filters">
 
                 <div class="catFor">
+                    <div class="categorieContainer">
 
                         <button class="dropdownButton" id="dropdownButton">
                             Catégorie <span class="arrow" id="arrow">&#9660;</span>
@@ -47,6 +48,10 @@ get_header();
                             ?>
                         </div>
 
+                    </div>
+
+                    <div class="formatContainer">
+
                             <button class="dropdownButton" id="dropdownButton">
                                 format <span class="arrow" id="arrow">&#9660;</span>
                             </button>
@@ -63,26 +68,30 @@ get_header();
                             ?>
                         </div>
                         
+                    </div>
                 </div>
 
                 <div class="filterContainer">
 
-                        <button class="dropdownButton" id="dropdownButton">
-                            Trier par<span class="arrow" id="arrow">&#9660;</span>
-                        </button>
+                    <div class="filterContent">
 
-                    <div class="dropdownContent">
-                        <?php
-                        $getSubFormats = get_terms('format');
+                            <button class="dropdownButton" id="dropdownButton">
+                                Trier par<span class="arrow" id="arrow">&#9660;</span>
+                            </button>
 
-                        if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
-                            foreach ($getSubFormats as $getSubFormat) {
-                                echo '<a href="# ' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                        <div class="dropdownContent">
+                            <?php
+                            $getSubFormats = get_terms('format');
+
+                            if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
+                                foreach ($getSubFormats as $getSubFormat) {
+                                    echo '<a href="# ' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                                }
                             }
-                        }
-                        ?>
-                </div>
+                            ?>
+                        </div>
 
+                    </div>
             </div>
 
         </div>

@@ -742,6 +742,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   gap: 15px;
 }
 .filters .dropdownButton {
+  text-transform: uppercase;
   width: 270px;
   border-radius: 8px;
   border: 1.3px solid #b8bbc2;
@@ -808,9 +809,6 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     padding: 30px 0;
     gap: 4%;
   }
-  .filters .dropdownButton {
-    width: 48%;
-  }
   .filters .catFor {
     box-sizing: border-box;
     width: 48%;
@@ -819,14 +817,42 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     flex-direction: row;
     justify-content: space-between;
   }
+  .filters .catFor .categorieContainer {
+    width: 48%;
+  }
+  .filters .catFor .categorieContainer .dropdownButton {
+    width: 100%;
+  }
+  .filters .catFor .categorieContainer .dropdownContent {
+    width: 100%;
+  }
+  .filters .catFor .formatContainer {
+    width: 48%;
+  }
+  .filters .catFor .formatContainer .dropdownButton {
+    width: 100%;
+  }
+  .filters .catFor .formatContainer .dropdownContent {
+    width: 100%;
+  }
   .filters .filterContainer {
     width: 48%;
     display: flex;
     justify-content: flex-end;
   }
+  .filters .filterContainer .filterContent {
+    width: 48%;
+  }
+  .filters .filterContainer .filterContent .dropdownButton {
+    width: 100%;
+  }
+  .filters .filterContainer .filterContent .dropdownContent {
+    width: 100%;
+  }
 }
 .activeBlock {
   display: block !important;
+  position: relative !important;
 }
 
 .buttonBorderStyle {

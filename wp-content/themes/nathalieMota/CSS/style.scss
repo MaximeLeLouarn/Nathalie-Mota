@@ -833,6 +833,7 @@ footer#colophon {
     }
 
     .dropdownButton {
+        text-transform: uppercase;
         width: 270px;
         border-radius: 8px;
         border: 1.3px solid $labelBorders;
@@ -904,9 +905,6 @@ footer#colophon {
         padding: 30px 0;
         gap: 4%;
 
-        .dropdownButton {
-            width: 48%;
-        }
         .catFor {
             box-sizing: border-box;
             width: 48%;
@@ -914,17 +912,47 @@ footer#colophon {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            .categorieContainer {
+                width: 48%;
+                .dropdownButton {
+                    width: 100%;
+                }
+                .dropdownContent {
+                    width: 100%;
+                }
+            }
+            .formatContainer {
+                width: 48%;
+                .dropdownButton {
+                    width: 100%;
+                }
+                .dropdownContent {
+                    width: 100%;
+                }
+            }
         }
         .filterContainer {
             width: 48%;
             display: flex;
             justify-content: flex-end;
+
+            .filterContent {
+                width: 48%;
+
+                .dropdownButton {
+                    width: 100%;
+                }
+                .dropdownContent {
+                    width: 100%;
+                }
+            }
         }
     }
 }
 // Interactive classes fetched by JS
 .activeBlock {
     display: block !important;
+    position: relative !important;
 }
 .buttonBorderStyle {
     border-radius: 8px 8px 0 0 !important;
