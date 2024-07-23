@@ -722,6 +722,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 
 .filtersImages {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -857,4 +858,18 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 
 .buttonBorderStyle {
   border-radius: 8px 8px 0 0 !important;
+}
+
+.photosPostsContainer {
+  box-sizing: border-box;
+  margin: 0 5% 20px 5%;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.photosPostsContainer .postItem img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1.88/1.65;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

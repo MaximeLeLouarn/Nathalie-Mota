@@ -2,12 +2,22 @@
 
 <?php 
 $photosPosts = get_custom_posts_with_images();
-foreach ($posts as $post):
+
+if (!empty($photosPosts)) {
+foreach ($photosPosts as $post):
 ?>
 
-    <div class="postItem" data-category="<?php echo $post['categorie']; ?>" data-format="<?php echo $post['format']; ?>" data-year="<?php echo $post['year']; ?>">
-            <img src="<?php echo $post['image']; ?>" alt="<?php echo $post['alt_text']; ?>">
+    <!-- implode(', ', $post['categorie'])
+     takes the array of term names and joins them into a single string, with each term separated by a comma and a space.
+     For example, if $post['categorie'] is ['Nature', 'Wildlife'],
+     implode(', ', $post['categorie']) will produce the string "Nature, Wildlife". -->
+    <div class="postItem" data-category="<?= esc_attr(implode(', ', $post['categorie'])); ?>" data-format="<?= esc_attr(implode(', ', $post['format'])); ?>" data-year="<?= esc_attr($post['year']); ?>">
+            <img src="<?= $post['image']; ?>" alt="<?= $post['alt_text']; ?>">
         </div>
-    <?php endforeach; ?>
+    <?php endforeach; 
+    } else {
+        echo 'Pas de photos trouvées';
+    }
+    ?>
     
 </div>

@@ -288,23 +288,27 @@ function get_previous_post_thumbnail_id() {
     return false;
 }
 
-// Get the images of the photo posts + their informations
+// Get the images of the photo posts + their informations. This function allows to display all posts regarding to the following criterias. 
+// It is needed at the initial page load.
 function get_custom_posts_with_images() {
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => -1,
-        'meta_query' => array(
-            array(
-                'key' => 'categorie',
-                'value' => '',
-                'compare' => '!='
-            ),
-            array(
-                'key' => 'format',
-                'value' => '',
-                'compare' => '!='
-            )
-        )
+		'tax_query' => array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => 'categorie',
+				'field' => 'term_id',
+				'terms' => '',
+				'operator' => 'EXISTS'
+			),
+			array(
+				'taxonomy' => 'format',
+				'field' => 'term_id',
+				'terms' => '',
+				'operator' => 'EXISTS'
+			)
+		)
     );
 
     $query = new WP_Query($args);
@@ -317,8 +321,10 @@ function get_custom_posts_with_images() {
                 'title' => get_the_title(),
                 'image' => get_the_post_thumbnail_url(),
                 'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
-                'categorie' => get_field('categorie'),
-                'format' => get_field('format'),
+				// To the difference of single-photo, we use the parameter 'get_the_ID' inside the more global function instead of in 
+				// another variable, that we would have to call later.
+				'categorie' => wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'names')), // Get the taxonomy term names
+                'format' => wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names')), // Get the taxonomy term names
                 'year' => get_the_date('Y')
             );
         }
@@ -329,6 +335,64 @@ function get_custom_posts_with_images() {
     }
 }
 
+// This function however is made to be dynamic, to fetch only the photos that are coming from desired filters without reloading the page. 
+// So both will be needed.
+function filter_custom_posts_ajax() {
+    $category = $_POST['category'];
+    $format = $_POST['format'];
+    $year = $_POST['year'];
+
+    $tax_query = array('relation' => 'AND');
+    if (!empty($category)) {
+        $tax_query[] = array(
+            'taxonomy' => 'categorie',
+            'field' => 'term_id',
+            'terms' => $category
+        );
+    }
+    if (!empty($format)) {
+        $tax_query[] = array(
+            'taxonomy' => 'format',
+            'field' => 'term_id',
+            'terms' => $format
+        );
+    }
+
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => -1,
+        'tax_query' => $tax_query,
+        'date_query' => !empty($year) ? array(
+            array(
+                'year' => $year
+            )
+        ) : array()
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $posts = array();
+        while ($query->have_posts()) {
+            $query->the_post();
+            $posts[] = array(
+                'title' => get_the_title(),
+                'image' => get_the_post_thumbnail_url(),
+                'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
+                'categorie' => wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'names')),
+                'format' => wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names')),
+                'year' => get_the_date('Y')
+            );
+        }
+        wp_reset_postdata();
+        wp_send_json_success($posts);
+    } else {
+        wp_send_json_error('Pas de photos trouvées');
+    }
+}
+
+add_action('wp_ajax_filter_custom_posts', 'filter_custom_posts_ajax');
+add_action('wp_ajax_nopriv_filter_custom_posts', 'filter_custom_posts_ajax');
 
 // Get the category taxonomies 
 // function get_category_taxonomies() {

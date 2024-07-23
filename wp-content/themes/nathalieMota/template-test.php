@@ -42,7 +42,7 @@ get_header();
 
                             if (!empty($getSubCategories) && !is_wp_error($getSubCategories)) {
                                 foreach ($getSubCategories as $getSubCategory) {
-                                    echo '<a href="# ' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
+                                    echo '<a href="#" class="categoryFilter" data-category="' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
                                 }
                             }
                             ?>
@@ -62,7 +62,7 @@ get_header();
 
                             if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
                                 foreach ($getSubFormats as $getSubFormat) {
-                                    echo '<a href="# ' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                                    echo '<a href="#" class="categoryFilter" data-category="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
                                 }
                             }
                             ?>
@@ -96,7 +96,10 @@ get_header();
 
         </div>
 
-        <div class="images"></div>
+        <div class="images">
+            <?php get_template_part('template-parts/BlockPhoto'); ?>
+        </div>
+
     </section>
 
 </main>

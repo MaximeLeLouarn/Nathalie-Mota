@@ -43,3 +43,494 @@
 (
 )
 
+[23-Jul-2024 08:58:38 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type WP_Post as array in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php:8
+Stack trace:
+#0 C:\wamp64\www\sitePhotos\wp-includes\template.php(812): require()
+#1 C:\wamp64\www\sitePhotos\wp-includes\template.php(745): load_template('C:\\wamp64\\www\\s...', false, Array)
+#2 C:\wamp64\www\sitePhotos\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php(100): get_template_part('template-parts/...')
+#4 C:\wamp64\www\sitePhotos\wp-includes\template-loader.php(106): include('C:\\wamp64\\www\\s...')
+#5 C:\wamp64\www\sitePhotos\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\s...')
+#6 C:\wamp64\www\sitePhotos\index.php(17): require('C:\\wamp64\\www\\s...')
+#7 {main}
+  thrown in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 8
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:49:27 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:49:27 UTC] PHP Stack trace:
+[23-Jul-2024 12:49:27 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:49:27 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:49:27 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:49:27 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:49:27 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:49:27 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:49:27 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:49:27 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[23-Jul-2024 12:52:44 UTC] PHP Warning:  Array to string conversion in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-parts\BlockPhoto.php on line 14
+[23-Jul-2024 12:52:44 UTC] PHP Stack trace:
+[23-Jul-2024 12:52:44 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[23-Jul-2024 12:52:44 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[23-Jul-2024 12:52:44 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[23-Jul-2024 12:52:44 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[23-Jul-2024 12:52:44 UTC] PHP   5. get_template_part($slug = 'template-parts/BlockPhoto', $name = *uninitialized*, $args = *uninitialized*) C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:100
+[23-Jul-2024 12:52:44 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
+[23-Jul-2024 12:52:44 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
+[23-Jul-2024 12:52:44 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812

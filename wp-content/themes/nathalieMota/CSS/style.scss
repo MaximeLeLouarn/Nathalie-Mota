@@ -813,6 +813,7 @@ footer#colophon {
 // Filters
 .filtersImages {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -949,11 +950,27 @@ footer#colophon {
         }
     }
 }
-// Interactive classes fetched by JS
+// Interactive classes fetched by JS for the filters
 .activeBlock {
     display: block !important;
     position: relative !important;
 }
 .buttonBorderStyle {
     border-radius: 8px 8px 0 0 !important;
+}
+
+// Photos part with photos block
+.photosPostsContainer {
+    box-sizing: border-box;
+    margin: 0 5% 20px 5%;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    .postItem {
+        img {
+            object-fit: cover;
+            aspect-ratio: 1.88/1.65;
+            width: 100%;
+        }
+    }
 }
