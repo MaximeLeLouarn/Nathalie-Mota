@@ -148,14 +148,32 @@ function nathaliemota_scripts() {
 	wp_enqueue_script( 'nathaliemota-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-burgerMenu', get_template_directory_uri() . '/js/burgerMenu.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-contactModal', get_template_directory_uri() . '/js/modal.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'nathaliemota-thumbnailsNavigatip,', get_template_directory_uri() . '/js/thumbnailsNav.js', array(), _S_VERSION, true );
+	if( is_single()) {wp_enqueue_script( 'nathaliemota-thumbnailsNavigatip,', get_template_directory_uri() . '/js/thumbnailsNav.js', array(), _S_VERSION, true );};
 	wp_enqueue_script( 'nathaliemota-dropdownMenus,', get_template_directory_uri() . '/js/dropdownMenus.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nathaliemota-lightbox,', get_template_directory_uri() . '/js/lightbox.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array(), _S_VERSION, true );
+	    // Localize the script to prepare for AJAX
+		wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
+			// Pass the AJAX URL to the script
+			'ajax_url' => admin_url('admin-ajax.php')  
+		));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'nathaliemota_scripts' );
+
+// Enqueue the ajax based scripts
+function ajaxBased_scripts() {
+	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array(), null, true );
+	// Localize the script to prepare for AJAX
+	wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
+		// Pass the AJAX URL to the script
+		'ajax_url' => admin_url('admin-ajax.php')  
+	));
+}
+add_action( 'wp_enqueue_scripts', 'ajaxBased_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -199,6 +217,9 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 // }
 // add_filter('post_type_link', 'replace_slug', 10, 2);
 
+
+
+// THE USABLE FUNCTIONS
 
 // Setting up a function for random images
 // Function to get a random image ID from the media library
@@ -318,6 +339,7 @@ function get_custom_posts_with_images() {
         while ($query->have_posts()) {
             $query->the_post();
             $posts[] = array(
+				'ID' => get_the_ID(),
                 'title' => get_the_title(),
                 'image' => get_the_post_thumbnail_url(),
                 'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
@@ -338,60 +360,70 @@ function get_custom_posts_with_images() {
 // This function however is made to be dynamic, to fetch only the photos that are coming from desired filters without reloading the page. 
 // So both will be needed.
 function filter_custom_posts_ajax() {
-    $category = $_POST['category'];
-    $format = $_POST['format'];
-    $year = $_POST['year'];
+    // Gather the filters from the AJAX request
+    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
+    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+    $year = isset($_POST['year']) ? sanitize_text_field($_POST['year']) : '';
 
-    $tax_query = array('relation' => 'AND');
-    if (!empty($category)) {
-        $tax_query[] = array(
-            'taxonomy' => 'categorie',
-            'field' => 'term_id',
-            'terms' => $category
-        );
-    }
-    if (!empty($format)) {
-        $tax_query[] = array(
-            'taxonomy' => 'format',
-            'field' => 'term_id',
-            'terms' => $format
-        );
-    }
-
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => -1,
-        'tax_query' => $tax_query,
-        'date_query' => !empty($year) ? array(
-            array(
-                'year' => $year
-            )
-        ) : array()
+	$args = array(
+        'post_type' => 'post',
+        'posts_per_page' => -1, // Adjust as needed
+        'meta_query' => array(
+            'relation' => 'AND',
+        ),
     );
+
+    if ($category) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => $category,
+        );
+    }
+
+    if ($format) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format',
+            'field' => 'slug',
+            'terms' => $format,
+        );
+    }
+
+    if ($year) {
+        $args['date_query'] = array(
+            array(
+                'year' => $year,
+            ),
+        );
+    }
 
     $query = new WP_Query($args);
 
+	$posts = array();
     if ($query->have_posts()) {
-        $posts = array();
         while ($query->have_posts()) {
             $query->the_post();
             $posts[] = array(
+                'id' => get_the_ID(),
                 'title' => get_the_title(),
-                'image' => get_the_post_thumbnail_url(),
-                'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
-                'categorie' => wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'names')),
+                'image' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
+                'alt_text' => get_post_meta(get_post_thumbnail_id(get_the_ID()), '_wp_attachment_image_alt', true),
+                'categorie' => wp_get_post_terms(get_the_ID(), 'category', array('fields' => 'names')),
                 'format' => wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names')),
-                'year' => get_the_date('Y')
+                'year' => get_the_date('Y'),
             );
         }
-        wp_reset_postdata();
-        wp_send_json_success($posts);
-    } else {
-        wp_send_json_error('Pas de photos trouvées');
     }
-}
 
+    // Reset the post data
+    wp_reset_postdata();
+
+    // Return the response
+    wp_send_json_success($posts);
+}
+// action for logged in users
 add_action('wp_ajax_filter_custom_posts', 'filter_custom_posts_ajax');
+// action for non logged users
 add_action('wp_ajax_nopriv_filter_custom_posts', 'filter_custom_posts_ajax');
 
 // Get the category taxonomies 

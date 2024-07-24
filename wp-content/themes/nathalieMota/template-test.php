@@ -32,11 +32,14 @@ get_header();
                 <div class="catFor">
                     <div class="categorieContainer">
 
-                        <button class="dropdownButton" id="dropdownButton">
+                        <button class="dropdownButton dropdownButtonTextCat" id="categorieButton">
                             Catégorie <span class="arrow" id="arrow">&#9660;</span>
                         </button>
 
                         <div class="dropdownContent">
+                            <!-- To be able to come back to all photos without filter -->
+                        <a href="#" class="categoryFilter" data-category="all">Tout</a>
+                        <!-- And go fetch all the other possible options -->
                             <?php
                             $getSubCategories = get_terms('categorie');
 
@@ -52,17 +55,20 @@ get_header();
 
                     <div class="formatContainer">
 
-                            <button class="dropdownButton" id="dropdownButton">
+                            <button class="dropdownButton dropdownButtonTextFor" id="formatButton">
                                 format <span class="arrow" id="arrow">&#9660;</span>
                             </button>
 
                         <div class="dropdownContent">
+                        <!-- To be able to come back to all photos without filter -->
+                        <a href="#" class="formatFilter" data-category="all2">Tout</a>
+                        <!-- And go fetch all the other possible options -->
                             <?php
                             $getSubFormats = get_terms('format');
 
                             if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
                                 foreach ($getSubFormats as $getSubFormat) {
-                                    echo '<a href="#" class="categoryFilter" data-category="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                                    echo '<a href="#" class="formatFilter" data-category="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
                                 }
                             }
                             ?>
@@ -75,20 +81,32 @@ get_header();
 
                     <div class="filterContent">
 
-                            <button class="dropdownButton" id="dropdownButton">
+                            <button class="dropdownButton dropdownButtonTextTri" id="triButton">
                                 Trier par<span class="arrow" id="arrow">&#9660;</span>
                             </button>
 
                         <div class="dropdownContent">
-                            <?php
-                            $getSubFormats = get_terms('format');
-
-                            if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
-                                foreach ($getSubFormats as $getSubFormat) {
-                                    echo '<a href="# ' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                        <?php
+                        $years = array();
+                        $posts = get_posts(array(
+                            'post_type' => 'photo',
+                            'posts_per_page' => -1,
+                            'orderby' => 'date',
+                            'order' => 'DESC'
+                        ));
+                        if ($posts) {
+                            foreach ($posts as $post) {
+                                $year = get_the_date('Y', $post);
+                                if (!in_array($year, $years)) {
+                                    $years[] = $year;
                                 }
                             }
-                            ?>
+
+                            foreach ($years as $year) {
+                                echo '<a href="#" class="yearFilter" data-year="' . esc_attr($year) . '">' . esc_html($year) . '</a>';
+                            }
+                        }
+                        ?>
                         </div>
 
                     </div>
