@@ -88,12 +88,27 @@ categoryLinksFor.forEach((link) => {
   });
 });
 // Trier par
+// In 2 parts, first specific function (this filter is different)
+function sortPhotos(order) {
+  const photoPosts = Array.from(document.querySelectorAll(".postItem"));
+  const sortedPosts = photoPosts.sort((a, b) => {
+    const yearA = parseInt(a.getAttribute("data-year"));
+    const yearB = parseInt(b.getAttribute("data-year"));
+    return order === "newest" ? yearB - yearA : yearA - yearB;
+  });
+  const container = document.querySelector(".photosPostsContainer");
+  container.innerHTML = "";
+  sortedPosts.forEach((post) => container.appendChild(post));
+}
+// And second, the usual foreach
 categoryLinksTri.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
     // const year = event.target.dataset.year;
+    const sortOrder = event.target.dataset.sortOrder;
     dropdownButtonTextTri.innerHTML = `${event.target.textContent} <span class="arrow">&#9660;</span>`;
     resetDropdowns();
+    sortPhotos(sortOrder);
     // filterPhotos(
     //   dropdownButtonTextCat.textContent.trim().toLowerCase(),
     //   dropdownButtonTextFor.textContent.trim().toLowerCase(),

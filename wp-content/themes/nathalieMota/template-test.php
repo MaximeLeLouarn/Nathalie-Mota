@@ -102,9 +102,9 @@ get_header();
                                 }
                             }
 
-                            foreach ($years as $year) {
-                                echo '<a href="#" class="yearFilter" data-year="' . esc_attr($year) . '">' . esc_html($year) . '</a>';
-                            }
+                                echo '<a href="#" class="yearFilter" data-sort-order="newest">Descendant</a>';
+                                echo '<a href="#" class="yearFilter" data-sort-order="oldest">Ascendant</a>';
+
                         }
                         ?>
                         </div>
@@ -116,6 +116,9 @@ get_header();
 
         <div class="images">
             <?php get_template_part('template-parts/BlockPhoto'); ?>
+            <div class="loadMore">
+                <button>Charger Plus</button>
+            </div>
         </div>
 
     </section>

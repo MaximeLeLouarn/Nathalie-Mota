@@ -28,6 +28,12 @@ contactDiv.addEventListener("click", (event) => {
     contactDiv.classList.remove("active");
   }
 });
+// Close the modal on escape button
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    contactDiv.classList.remove("active");
+  }
+});
 
 // With the contact btn from the posts
 // Get all contact buttons
@@ -37,10 +43,10 @@ const contactButtons = document.querySelectorAll(".postContactBtn");
 contactButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     // Get the data-ref value from the clicked button
-    var refValue = this.getAttribute("data-ref");
+    const refValue = this.getAttribute("data-ref");
 
     // Find the CF7 hidden field and set its value
-    var preWrittenField = document.getElementById("preWritten");
+    const preWrittenField = document.getElementById("preWritten");
     if (preWrittenField) {
       preWrittenField.value = refValue;
     }

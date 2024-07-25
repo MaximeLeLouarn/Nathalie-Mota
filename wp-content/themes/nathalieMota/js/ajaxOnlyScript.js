@@ -1,4 +1,6 @@
 // The AJAX part
+
+// The filters CATFOR + Trier par interractions
 const filterContainer = document.querySelector(".filtersImages");
 
 const selectedFilters = {
@@ -58,3 +60,58 @@ function applyFilters() {
     },
   });
 }
+
+// The loadMore button
+let page = 1;
+const loadMore = document.querySelector(".loadMore");
+const loadMoreContainer = document.querySelector(".images");
+
+loadMore.addEventListener("click", function () {
+  page++;
+  // Send request
+  const xhr = new XMLHttpRequest();
+  // True = asynchronous
+  xhr.open("POST", "/wp-admin/admin-ajax.php", true);
+  xhr.setRequestHeader(
+    "Content-Type",
+    "application/x-www-form-urlencoded; charset=UTF-8"
+  );
+  // Defines the function to handle the response from the server when the AJAX request completes
+  xhr.onload = function () {
+    // Checks if the request was successful (HTTP status code 200)
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        const newPosts = response.data;
+        newPosts.forEach((post) => {
+          // Extracts the array of new posts from the response data
+          const postItem = document.createElement("div");
+          postItem.classList.add("postItem");
+          postItem.setAttribute("data-category", post.categorie.join(", "));
+          postItem.setAttribute("data-format", post.format.join(", "));
+          postItem.setAttribute("data-year", post.year);
+          postItem.innerHTML = `
+                        <div class="informationsHoverPhoto">
+                            <h4 class="refPhotoLightbox">${post.reference}</h4>
+                            <h4 class="catPhotoLightbox">${post.categorie.join(
+                              ", "
+                            )}</h4>
+                        </div>
+                        <div class="iconEye" onclick="window.open('${
+                          post.permalink
+                        }', '_blank')"></div>
+                        <div class="expandPhotoIcon"></div>
+                        <img class="imgPostItem" src="${post.image}" alt="${
+            post.alt_text
+          }">
+                    `;
+          loadMoreContainer.appendChild(postItem);
+        });
+      } else {
+        loadMore.style.display = "none";
+      }
+    }
+  };
+  // Send request to server with the action and page number
+  xhr.send("action=load_more_photos&page=" + page);
+});

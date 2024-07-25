@@ -950,6 +950,31 @@ footer#colophon {
         }
     }
 }
+.images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .loadMore {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-bottom: 24px;
+        border: none;
+        border-radius: 2px;
+
+        button {
+            width: 272px;
+            height: 50px;
+            text-align: center;
+            font-family: "Space Mono", sans-serif;
+            font-size: 12px;
+            color: $black;
+            background-color: $mediumGrey;
+        }
+    }
+}
 // Interactive classes fetched by JS for the filters
 .activeBlock {
     display: block !important;
@@ -1039,5 +1064,101 @@ footer#colophon {
     display: none;
     h4 {
         color: $white;
+    }
+}
+// The post photo modal lightbox
+.photoModal {
+    display: none;
+    box-sizing: border-box;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20%;
+
+    .modalPhotoContent {
+        margin: auto;
+        max-width: 62vw;
+        max-height: 75vh;
+        object-fit: cover;
+    }
+    .modalPhotoCaption {
+        margin: auto;
+        box-sizing: border-box;
+        padding-right: 15px;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 62vw;
+        max-height: 75vh;
+        text-align: center;
+        color: $white;
+        padding: 10px;
+
+        span {
+            color: $white;
+            font-size: 14px;
+            font-family: "Space Mono", sans-serif;
+        }
+    }
+    .navigationLightbox {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px;
+
+        .arrowLight {
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .leftLight {
+            left: 20px;
+        }
+
+        .rightLight {
+            right: 20px;
+        }
+    }
+}
+// Close the modal
+.closePhotoModal {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    color: $white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 850px) {
+    .navigationLightbox {
+        bottom: 2%;
+    }
+    .modalPhotoContent {
+        max-height: 82vh !important;
     }
 }

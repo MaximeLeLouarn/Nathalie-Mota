@@ -311,10 +311,11 @@ function get_previous_post_thumbnail_id() {
 
 // Get the images of the photo posts + their informations. This function allows to display all posts regarding to the following criterias. 
 // It is needed at the initial page load.
-function get_custom_posts_with_images() {
+function get_custom_posts_with_images($posts_per_page = 8, $paged = 1) {
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => -1,
+        'posts_per_page' => $posts_per_page,
+		'paged' => $paged,
 		'tax_query' => array(
 			'relation' => 'AND',
 			array(
@@ -425,6 +426,46 @@ function filter_custom_posts_ajax() {
 add_action('wp_ajax_filter_custom_posts', 'filter_custom_posts_ajax');
 // action for non logged users
 add_action('wp_ajax_nopriv_filter_custom_posts', 'filter_custom_posts_ajax');
+
+// Here is for the loadMore button
+function load_more_photos() {
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $photosPosts = get_custom_posts_with_images(8, $page);
+    
+    if (!empty($photosPosts)) {
+        wp_send_json_success($photosPosts);
+    } else {
+        wp_send_json_error('No more posts');
+    }
+}
+// And without forgetting the add_action
+add_action('wp_ajax_load_more_photos', 'load_more_photos');
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
+
+
+// Create reusable function for photo blocks !NOT USED YET
+function render_photo_post($post) {
+    // Fetch the reference field from ACF
+    $reference = get_field('reference', $post->ID);
+    
+    // Get categories
+    $categories = get_the_terms($post->ID, 'categorie');
+    $category_names = [];
+    if ($categories && !is_wp_error($categories)) {
+        foreach ($categories as $category) {
+            $category_names[] = $category->name;
+        }
+    }
+    
+    // Get formats
+    $formats = get_the_terms($post->ID, 'format');
+    $format_names = [];
+    if ($formats && !is_wp_error($formats)) {
+        foreach ($formats as $format) {
+            $format_names[] = $format->name;
+        }
+    }
+}
 
 // Get the category taxonomies 
 // function get_category_taxonomies() {
