@@ -4007,3 +4007,21 @@ Stack trace:
 [24-Jul-2024 20:30:41 UTC] PHP   6. locate_template($template_names = [0 => 'template-parts/BlockPhoto.php'], $load = TRUE, $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\general-template.php:206
 [24-Jul-2024 20:30:41 UTC] PHP   7. load_template($_template_file = 'C:\\wamp64\\www\\sitePhotos/wp-content/themes/nathaliemota/template-parts/BlockPhoto.php', $load_once = FALSE, $args = []) C:\wamp64\www\sitePhotos\wp-includes\template.php:745
 [24-Jul-2024 20:30:41 UTC] PHP   8. require() C:\wamp64\www\sitePhotos\wp-includes\template.php:812
+[25-Jul-2024 00:39:50 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 177
+[25-Jul-2024 00:39:50 UTC] PHP Stack trace:
+[25-Jul-2024 00:39:50 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[25-Jul-2024 00:39:50 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[25-Jul-2024 00:39:50 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[25-Jul-2024 00:39:50 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[25-Jul-2024 00:45:58 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 177
+[25-Jul-2024 00:45:58 UTC] PHP Stack trace:
+[25-Jul-2024 00:45:58 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[25-Jul-2024 00:45:58 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[25-Jul-2024 00:45:58 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[25-Jul-2024 00:45:58 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[25-Jul-2024 00:48:38 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 177
+[25-Jul-2024 00:48:38 UTC] PHP Stack trace:
+[25-Jul-2024 00:48:38 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[25-Jul-2024 00:48:38 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[25-Jul-2024 00:48:38 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[25-Jul-2024 00:48:38 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
