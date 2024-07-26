@@ -144,19 +144,19 @@ function nathaliemota_scripts() {
 	wp_enqueue_style( 'nathaliemota-styleScss', get_template_directory_uri() . '/CSS/style.css', array(), _S_VERSION );
 	wp_style_add_data( 'nathaliemota-style', 'rtl', 'replace' );
 
-	wp_enqueue_script('importJQ', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js');
+	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), _S_VERSION, true);
 	wp_enqueue_script( 'nathaliemota-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-burgerMenu', get_template_directory_uri() . '/js/burgerMenu.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-contactModal', get_template_directory_uri() . '/js/modal.js', array(), _S_VERSION, true );
 	if( is_single()) {wp_enqueue_script( 'nathaliemota-thumbnailsNavigatip,', get_template_directory_uri() . '/js/thumbnailsNav.js', array(), _S_VERSION, true );};
 	wp_enqueue_script( 'nathaliemota-dropdownMenus,', get_template_directory_uri() . '/js/dropdownMenus.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-lightbox,', get_template_directory_uri() . '/js/lightbox.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array('jquery'), _S_VERSION, true );
 	    // Localize the script to prepare for AJAX
-		wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
-			// Pass the AJAX URL to the script
-			'ajax_url' => admin_url('admin-ajax.php')  
-		));
+		// wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
+		// 	// Pass the AJAX URL to the script
+		// 	'ajax_url' => admin_url('admin-ajax.php')  
+		// ));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -165,15 +165,15 @@ function nathaliemota_scripts() {
 add_action( 'wp_enqueue_scripts', 'nathaliemota_scripts' );
 
 // Enqueue the ajax based scripts
-function ajaxBased_scripts() {
-	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array(), null, true );
-	// Localize the script to prepare for AJAX
-	wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
-		// Pass the AJAX URL to the script
-		'ajax_url' => admin_url('admin-ajax.php')  
-	));
-}
-add_action( 'wp_enqueue_scripts', 'ajaxBased_scripts' );
+// function ajaxBased_scripts() {
+// 	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array(), null, true );
+// 	// Localize the script to prepare for AJAX
+// 	wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
+// 		// Pass the AJAX URL to the script
+// 		'ajax_url' => admin_url('admin-ajax.php')  
+// 	));
+// }
+// add_action( 'wp_enqueue_scripts', 'ajaxBased_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -311,11 +311,12 @@ function get_previous_post_thumbnail_id() {
 
 // Get the images of the photo posts + their informations. This function allows to display all posts regarding to the following criterias. 
 // It is needed at the initial page load.
-function get_custom_posts_with_images($posts_per_page = 8, $paged = 1) {
+function get_custom_posts_with_images() {
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => $posts_per_page,
-		'paged' => $paged,
+        'posts_per_page' => 8,
+		'paged' => 1,
+		'order' => 'DESC',
 		'tax_query' => array(
 			'relation' => 'AND',
 			array(
@@ -362,7 +363,7 @@ function get_custom_posts_with_images($posts_per_page = 8, $paged = 1) {
 // So both will be needed.
 function filter_custom_posts_ajax() {
     // Gather the filters from the AJAX request
-    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
+    $categorie = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
     $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
     $year = isset($_POST['year']) ? sanitize_text_field($_POST['year']) : '';
 
@@ -378,7 +379,7 @@ function filter_custom_posts_ajax() {
         $args['tax_query'][] = array(
             'taxonomy' => 'category',
             'field' => 'slug',
-            'terms' => $category,
+            'terms' => $categorie,
         );
     }
 
@@ -404,15 +405,7 @@ function filter_custom_posts_ajax() {
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            $posts[] = array(
-                'id' => get_the_ID(),
-                'title' => get_the_title(),
-                'image' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
-                'alt_text' => get_post_meta(get_post_thumbnail_id(get_the_ID()), '_wp_attachment_image_alt', true),
-                'categorie' => wp_get_post_terms(get_the_ID(), 'category', array('fields' => 'names')),
-                'format' => wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names')),
-                'year' => get_the_date('Y'),
-            );
+			get_template_part('template-part'/'BlockPhoto');
         }
     }
 
@@ -423,20 +416,41 @@ function filter_custom_posts_ajax() {
     wp_send_json_success($posts);
 }
 // action for logged in users
-add_action('wp_ajax_filter_custom_posts', 'filter_custom_posts_ajax');
+add_action('wp_ajax_filter_custom_posts_ajax', 'filter_custom_posts_ajax');
 // action for non logged users
-add_action('wp_ajax_nopriv_filter_custom_posts', 'filter_custom_posts_ajax');
+add_action('wp_ajax_nopriv_filter_custom_posts_ajax', 'filter_custom_posts_ajax');
 
 // Here is for the loadMore button
 function load_more_photos() {
-    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
-    $photosPosts = get_custom_posts_with_images(8, $page);
-    
-    if (!empty($photosPosts)) {
-        wp_send_json_success($photosPosts);
-    } else {
-        wp_send_json_error('No more posts');
-    }
+	$ajaxposts = new WP_Query([
+		'post_type' => 'publications',
+		'posts_per_page' => 8,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'paged' => $_POST['paged'],
+	  ]);
+	
+	  $response = '';
+	  $max_pages = $ajaxposts->max_num_pages;
+	
+	  if($ajaxposts->have_posts()) {
+		ob_start();
+		while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+		  $response .= get_template_part('template-part/BlockPhoto', 'postItem');
+		endwhile;
+		$output = ob_get_contents();
+		ob_end_clean();
+	  } else {
+		$response = '';
+	  }
+
+	  $result = [
+		'max' => $max_pages,
+		'html' => $output,
+	  ];
+	
+	  echo json_encode($result);
+	  exit;
 }
 // And without forgetting the add_action
 add_action('wp_ajax_load_more_photos', 'load_more_photos');

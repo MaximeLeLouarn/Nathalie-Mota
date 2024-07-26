@@ -115,10 +115,29 @@ get_header();
         </div>
 
         <div class="images">
-            <?php get_template_part('template-parts/BlockPhoto'); ?>
-            <div class="loadMore">
-                <button>Charger Plus</button>
+
+        <?php 
+$publications = new WP_Query([
+  'post_type' => 'publications',
+  'posts_per_page' => 8,
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'paged' => 1,
+]);
+?>
+            <?php if($publications->have_posts()): ?>
+            <ul class="publicationList">
+            <?php 
+                get_template_part('template-parts/BlockPhoto', 'photo');
+            ?>
+            </ul>
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
+
+            <div class="loadMoreContainer">
+                <a href="#!" class="" id="loadMore">Load more</a>
             </div>
+
         </div>
 
     </section>
