@@ -78,10 +78,11 @@
         paged: currentPage,
       },
       success: function (res) {
+        console.log(res);
         if (currentPage >= res.max) {
           $("#loadMore").hide();
         }
-        $(".publicationList").append(res);
+        $(".images").append(res.html);
       },
     });
   });

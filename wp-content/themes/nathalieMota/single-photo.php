@@ -125,10 +125,10 @@ get_header();
             $currentPostId = get_the_ID();
             // Get the categories of the current post
             $termsC = get_the_terms($currentPostId, 'categorie');
-            $termsCIds = array();
+            $termsCArray = array();
             if($termsC && !is_wp_error($termsC)) {
                 foreach($termsC as $terms) {
-                    $termsCIds[] = $terms->term_id;
+                    $termsCArray[] = $terms->term_id;
                 }
             }
             // Query to get a post from the same category but not the current post
@@ -138,7 +138,7 @@ get_header();
                     array(
                         'taxonomy' => 'categorie',
                         'field' => 'term_id',
-                        'terms' => $termsCIds,
+                        'terms' => $termsCArray,
                     ),
                 ),
                 'post__not_in' => array($currentPostId),

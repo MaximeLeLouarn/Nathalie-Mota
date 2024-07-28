@@ -38,7 +38,7 @@ get_header();
 
                         <div class="dropdownContent">
                             <!-- To be able to come back to all photos without filter -->
-                        <a href="#" class="categoryFilter" data-category="all">Tout</a>
+                        <a href="#!" class="categoryFilter" data-category="all">Tout</a>
                         <!-- And go fetch all the other possible options -->
                             <?php
                             $getSubCategories = get_terms('categorie');
@@ -68,7 +68,7 @@ get_header();
 
                             if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
                                 foreach ($getSubFormats as $getSubFormat) {
-                                    echo '<a href="#" class="formatFilter" data-category="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                                    echo '<a href="#!" class="formatFilter" data-category="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
                                 }
                             }
                             ?>
@@ -102,8 +102,8 @@ get_header();
                                 }
                             }
 
-                                echo '<a href="#" class="yearFilter" data-sort-order="newest">Descendant</a>';
-                                echo '<a href="#" class="yearFilter" data-sort-order="oldest">Ascendant</a>';
+                                echo '<a href="#!" class="yearFilter" data-sort-order="newest">Descendant</a>';
+                                echo '<a href="#!" class="yearFilter" data-sort-order="oldest">Ascendant</a>';
 
                         }
                         ?>
@@ -116,23 +116,42 @@ get_header();
 
         <div class="images">
 
-        <?php 
-$publications = new WP_Query([
-  'post_type' => 'publications',
-  'posts_per_page' => 8,
-  'orderby' => 'date',
-  'order' => 'DESC',
-  'paged' => 1,
-]);
-?>
-            <?php if($publications->have_posts()): ?>
-            <ul class="publicationList">
             <?php 
-                get_template_part('template-parts/BlockPhoto', 'photo');
+            $postsPerPage = 8;
+            $photo = new WP_Query([
+            'post_type' => 'photo',
+            'posts_per_page' => $postsPerPage,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'paged' => 1,
+            'tax_query' => array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => 'categorie',
+				'field' => 'term_id',
+				'terms' => '',
+				'operator' => 'IN'
+			),
+			array(
+				'taxonomy' => 'format',
+				'field' => 'term_id',
+				'terms' => '',
+				'operator' => 'IN'
+			)
+		)
+            ]);
+            
+            // If it doesn't work, let's try different structure where we can endwhile after get_template_part and reset after endif.
+            if ($photo->have_posts()) : 
+                while ($photo->have_posts()) : $photo->the_post(); ?>
+                    <div class="publicationList">
+                        <?php get_template_part('template-parts/BlockPhoto'); ?>
+                    </div>
+                <?php endwhile; 
+                wp_reset_postdata(); 
+            endif; 
             ?>
-            </ul>
-            <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
+
 
             <div class="loadMoreContainer">
                 <a href="#!" class="" id="loadMore">Load more</a>

@@ -309,6 +309,18 @@ function get_previous_post_thumbnail_id() {
     return false;
 }
 
+// Try to get the IDs 
+function get_term_ids($post_id, $taxonomy) {
+    $terms = get_the_terms($post_id, $taxonomy);
+    $term_ids = array();
+    if ($terms && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+            $term_ids[] = $term->term_id;
+        }
+    }
+    return $term_ids;
+}
+
 // Get the images of the photo posts + their informations. This function allows to display all posts regarding to the following criterias. 
 // It is needed at the initial page load.
 function get_custom_posts_with_images() {
@@ -323,13 +335,13 @@ function get_custom_posts_with_images() {
 				'taxonomy' => 'categorie',
 				'field' => 'term_id',
 				'terms' => '',
-				'operator' => 'EXISTS'
+				'operator' => 'IN'
 			),
 			array(
 				'taxonomy' => 'format',
 				'field' => 'term_id',
 				'terms' => '',
-				'operator' => 'EXISTS'
+				'operator' => 'IN'
 			)
 		)
     );
@@ -405,7 +417,7 @@ function filter_custom_posts_ajax() {
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-			get_template_part('template-part'/'BlockPhoto');
+			get_template_part('template-parts'/'BlockPhoto', 'photo');
         }
     }
 
@@ -422,12 +434,16 @@ add_action('wp_ajax_nopriv_filter_custom_posts_ajax', 'filter_custom_posts_ajax'
 
 // Here is for the loadMore button
 function load_more_photos() {
+	// Get the paged parameter
+	$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
+	// // Log paged value for debugging
+	// error_log('Paged: ' . $paged);
 	$ajaxposts = new WP_Query([
-		'post_type' => 'publications',
+		'post_type' => 'photo',
 		'posts_per_page' => 8,
 		'orderby' => 'date',
 		'order' => 'DESC',
-		'paged' => $_POST['paged'],
+		'paged' => $paged,
 	  ]);
 	
 	  $response = '';
@@ -436,94 +452,21 @@ function load_more_photos() {
 	  if($ajaxposts->have_posts()) {
 		ob_start();
 		while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		  $response .= get_template_part('template-part/BlockPhoto', 'postItem');
+			get_template_part('template-parts/BlockPhoto');
 		endwhile;
-		$output = ob_get_contents();
-		ob_end_clean();
-	  } else {
-		$response = '';
+		$response = ob_get_clean();
+		// Log the response for debugging
+		// error_log('Response HTML: ' . $response);
 	  }
 
 	  $result = [
 		'max' => $max_pages,
-		'html' => $output,
+		'html' => $response,
 	  ];
 	
 	  echo json_encode($result);
-	  exit;
+	  wp_die();
 }
 // And without forgetting the add_action
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
-
-
-// Create reusable function for photo blocks !NOT USED YET
-function render_photo_post($post) {
-    // Fetch the reference field from ACF
-    $reference = get_field('reference', $post->ID);
-    
-    // Get categories
-    $categories = get_the_terms($post->ID, 'categorie');
-    $category_names = [];
-    if ($categories && !is_wp_error($categories)) {
-        foreach ($categories as $category) {
-            $category_names[] = $category->name;
-        }
-    }
-    
-    // Get formats
-    $formats = get_the_terms($post->ID, 'format');
-    $format_names = [];
-    if ($formats && !is_wp_error($formats)) {
-        foreach ($formats as $format) {
-            $format_names[] = $format->name;
-        }
-    }
-}
-
-// Get the category taxonomies 
-// function get_category_taxonomies() {
-// 	// Get all taxonomies associated with the 'category' custom post type
-//     $taxonomies = array(
-// 				// Replace with your custom post type
-// 				'post_type' => 'photo', 
-// 				// Display all the posts
-// 				'posts_per_page' => -1,
-// 				'tax_query' => array(
-// 					array(
-// 						'taxonomy' => 'categorie',
-// 						'field' => 'slug',
-// 						)
-// 					)
-// 				);
-		
-// 	$query = new WP_Query($args);
-// 	// Initialize an empty array to store taxonomy details
-//     $output = array();
-
-// 	if ($query->have_posts()) {
-//         while ($query->have_posts()) {
-//             $query->the_post();
-
-//             // Get taxonomies associated with the current post
-//             $post_taxonomies = get_post_taxonomies(get_the_ID());
-
-//             foreach ($post_taxonomies as $taxonomy) {
-//                 $taxonomy_object = get_taxonomy($taxonomy);
-//                 $output[] = array(
-//                     'name' => $taxonomy_object->labels->name,
-//                     'slug' => $taxonomy_object->name,
-//                 );
-//             }
-//         }
-//         wp_reset_postdata();
-//     }
-
-//     // Remove duplicate taxonomies
-//     $output = array_unique($output, SORT_REGULAR);
-
-//     // Debugging: Print the output to verify it's correct
-//     error_log(print_r($output, true));
-
-//     return $output;
-// }
