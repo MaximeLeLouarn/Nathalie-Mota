@@ -950,10 +950,16 @@ footer#colophon {
         }
     }
 }
-.images {
+.imagesAndLoad {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .images {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .loadMoreContainer {
         display: flex;

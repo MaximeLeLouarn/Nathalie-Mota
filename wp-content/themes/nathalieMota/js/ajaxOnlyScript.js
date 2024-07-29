@@ -65,25 +65,30 @@
   // }
 
   // The loadMore button
-  let currentPage = 1;
 
-  $("#loadMore").on("click", function () {
-    currentPage++;
+  function loadMore(paged) {
     $.ajax({
       type: "POST",
       url: "./wp-admin/admin-ajax.php",
       dataType: "json",
       data: {
         action: "load_more_photos",
-        paged: currentPage,
+        paged,
       },
       success: function (res) {
+        // Checking res all the time to see in the inspector what is inside the array.
         console.log(res);
-        if (currentPage >= res.max) {
+        if (paged >= res.max) {
           $("#loadMore").hide();
         }
         $(".images").append(res.html);
       },
     });
+  }
+
+  let newPage = 1;
+  $("#loadMore").on("click", function () {
+    loadMore(newPage + 1);
+    newPage++;
   });
 })(jQuery);

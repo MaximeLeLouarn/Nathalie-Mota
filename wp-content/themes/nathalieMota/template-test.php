@@ -114,43 +114,70 @@ get_header();
 
         </div>
 
-        <div class="images">
+        <div class="imagesAndLoad">
+                
+            <div class="images">
 
             <?php 
-            $postsPerPage = 8;
-            $photo = new WP_Query([
-            'post_type' => 'photo',
-            'posts_per_page' => $postsPerPage,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'paged' => 1,
-            'tax_query' => array(
-			'relation' => 'AND',
-			array(
-				'taxonomy' => 'categorie',
-				'field' => 'term_id',
-				'terms' => '',
-				'operator' => 'IN'
-			),
-			array(
-				'taxonomy' => 'format',
-				'field' => 'term_id',
-				'terms' => '',
-				'operator' => 'IN'
-			)
-		)
-            ]);
-            
-            // If it doesn't work, let's try different structure where we can endwhile after get_template_part and reset after endif.
-            if ($photo->have_posts()) : 
-                while ($photo->have_posts()) : $photo->the_post(); ?>
-                    <div class="publicationList">
-                        <?php get_template_part('template-parts/BlockPhoto'); ?>
-                    </div>
-                <?php endwhile; 
+            // Putting similar schema as in single-photo to retrieve the correct tax_query terms
+            // Get the current post ID
+            $currentPostId = get_the_ID();
+            // Get the categories of the current post
+            $termsC = get_the_terms($currentPostId, 'categorie');
+            $termsCArray = array();
+            if($termsC && !is_wp_error($termsC)) {
+                foreach($termsC as $terms) {
+                    $termsCArray[] = $terms->term_id;
+                }
+            }
+            // And the format
+            $termsF = get_the_terms($currentPostId, 'format');
+            $termsFArray = array();
+            if($termsF && !is_wp_error($termsF)) {
+                foreach($termsF as $terms) {
+                    $termsFArray[] = $terms->term_id;
+                }
+            }
+
+                $postsPerPage = 8;
+                $photo = new WP_Query([
+                'post_type' => 'photo',
+                'posts_per_page' => $postsPerPage,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'paged' => 1,
+                'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'categorie',
+                    'field' => 'term_id',
+                    'terms' => $termsCArray,
+                ),
+                array(
+                    'taxonomy' => 'format',
+                    'field' => 'term_id',
+                    'terms' => $termsFArray,
+                )
+            )
+                ]);
+                
+                // If it doesn't work, let's try different structure where we can endwhile after get_template_part and reset after endif.
+                // Tutorial followed at this link: https://weichie.com/blog/load-more-posts-ajax-wordpress/.
+                if ($photo->have_posts()) : 
+                    while ($photo->have_posts()) : $photo->the_post(); ?>
+                        <div class="publicationList">
+                            <?php get_template_part('template-parts/BlockPhoto'); ?>
+                            </div>
+                            <?php
+                            endwhile; 
+                            // Try to debug and understand what could cause no post to appear on page load
+                            else :
+                            echo '<p>No posts found.</p>';?>
+                <?php endif; 
                 wp_reset_postdata(); 
-            endif; 
-            ?>
+                ?>
+            
+            </div>
 
 
             <div class="loadMoreContainer">

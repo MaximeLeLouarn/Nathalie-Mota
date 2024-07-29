@@ -1,34 +1,46 @@
 <div class="photosPostsContainer" id="photosPostsContainer">
-    <p>test</p>
     <?php
         // Get all the needed informations for different circumpstances
     $currentPostId = get_the_ID();
     $currentPostTitle = get_the_title();
-    $currentPostImage = get_the_post_thumbnail_url();
+    $currentPostImage = get_the_post_thumbnail_url(get_the_ID(), 'full');
     $currentPostAltText = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
     $currentPostReference= get_field('reference');
-    $currentPostCat = get_term_ids($currentPostId, 'categorie');
-    $currentPostFor = get_term_ids($currentPostId, 'format');
     $currentPostYear = get_the_date('Y');
+    // For the taxonomies it's a bit more specific. So first we go get the terms name
+    $currentPostC = wp_get_post_terms($currentPostId, 'categorie');
+    $currentPostF = wp_get_post_terms($currentPostId, 'format');
+    // We need then to put them into array
+    $currentPostCatSlugs = array();
+    $currentPostForSlugs = array();
+    // And retrieve the slugs from the arrays
+    if (!is_wp_error($currentPostC)) {
+        foreach ($currentPostC as $term) {
+            $currentPostCatSlugs[] = $term->slug;
+        }
+    }
+    
+    if (!is_wp_error($currentPostF)) {
+        foreach ($currentPostF as $term) {
+            $currentPostForSlugs[] = $term->slug;
+        }
+    }
+    
+    // var_dump($currentPostCatSlugs);
+    // var_dump($currentPostForSlugs);
+    
+    // For then breaking the array into string -explanations of implode function bellow-.
+    $currentPostCat = implode(',', $currentPostCatSlugs);
+    $currentPostFor = implode(',', $currentPostForSlugs);
 
-    // Backup solution for the categories
-    // wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'names'));
-    // wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names'));
     ?>
 
-<?php 
-// if (!empty($photosPosts)) {
-//     foreach ($photosPosts as $post):
-//         // Fetch the reference field from ACF
-//         $reference = get_field('reference', $post['ID']);
-
-   ?>
 <!-- 
     implode(', ', $post['categorie'])
      takes the array of term names and joins them into a single string, with each term separated by a comma and a space.
      For example, if $post['categorie'] is ['Nature', 'Wildlife'],
      implode(', ', $post['categorie']) will produce the string "Nature, Wildlife". -->
-     <!-- LINES PROBLEM 31 32 35 (+1 now), CONVERSION ARRAY TO STRING -->
+     <!-- LINES PROBLEM 31 32 35, CONVERSION ARRAY TO STRING -->
     <div class="postItem" data-categorie="<?= $currentPostCat; ?>
     " data-format="<?= $currentPostFor; ?>" data-year="<?= esc_attr($currentPostYear); ?>">
             <div class="informationsHoverPhoto">
@@ -37,14 +49,8 @@
             </div>
             <div class="iconEye" onclick="window.open('<?= esc_url($currentPostId); ?>', '_blank')"></div>
             <div class="expandPhotoIcon"></div>
-            <img class="imgPostItem" src="<?= $currentPostImage; ?>" alt="<?= $currentPostAltText; ?>">
+            <img class="imgPostItem" src="<?= esc_url($currentPostImage); ?>" alt="<?= esc_attr($currentPostAltText) ?>">
         </div>
-    <?php 
-    // endforeach;
-    // } else {
-    //     echo 'Pas de photos trouvées';
-    // }
-    // ?>
     
 </div>
 

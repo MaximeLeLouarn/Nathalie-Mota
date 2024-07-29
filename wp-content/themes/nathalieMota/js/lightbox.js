@@ -2,6 +2,7 @@ const modal = document.getElementById("photoModal");
 const modalImg = document.getElementById("expandedImg");
 const modalCaption = document.getElementById("modalPhotoCaption");
 const closeModal = document.querySelector(".closePhotoModal");
+console.log(closeModal);
 const prevPost = document.getElementById("prevPostLightbox");
 const nextPost = document.getElementById("nextPostLightbox");
 const postItems = document.querySelectorAll(".postItem");

@@ -435,23 +435,24 @@ add_action('wp_ajax_nopriv_filter_custom_posts_ajax', 'filter_custom_posts_ajax'
 // Here is for the loadMore button
 function load_more_photos() {
 	// Get the paged parameter
-	$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
+	$paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
 	// // Log paged value for debugging
 	// error_log('Paged: ' . $paged);
-	$ajaxposts = new WP_Query([
+	$postsPerPage = 8;
+	$photo = new WP_Query([
 		'post_type' => 'photo',
-		'posts_per_page' => 8,
+		'posts_per_page' => $postsPerPage,
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'paged' => $paged,
 	  ]);
 	
 	  $response = '';
-	  $max_pages = $ajaxposts->max_num_pages;
+	  $max_pages = $photo->max_num_pages;
 	
-	  if($ajaxposts->have_posts()) {
+	  if($photo->have_posts()) {
 		ob_start();
-		while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+		while($photo->have_posts()) : $photo->the_post();
 			get_template_part('template-parts/BlockPhoto');
 		endwhile;
 		$response = ob_get_clean();
