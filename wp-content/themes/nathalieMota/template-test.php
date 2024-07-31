@@ -38,14 +38,14 @@ get_header();
 
                         <div class="dropdownContent">
                             <!-- To be able to come back to all photos without filter -->
-                        <a href="#!" class="categoryFilter" data-category="all">Tout</a>
+                        <a href="#!" class="categoryFilter" data-categorie="all">Tout</a>
                         <!-- And go fetch all the other possible options -->
                             <?php
                             $getSubCategories = get_terms('categorie');
 
                             if (!empty($getSubCategories) && !is_wp_error($getSubCategories)) {
                                 foreach ($getSubCategories as $getSubCategory) {
-                                    echo '<a href="#" class="categoryFilter" data-category="' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
+                                    echo '<a href="#" class="categoryFilter" data-categorie="' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
                                 }
                             }
                             ?>
@@ -61,14 +61,14 @@ get_header();
 
                         <div class="dropdownContent">
                         <!-- To be able to come back to all photos without filter -->
-                        <a href="#" class="formatFilter" data-category="all2">Tout</a>
+                        <a href="#" class="formatFilter" data-format="all2">Tout</a>
                         <!-- And go fetch all the other possible options -->
                             <?php
                             $getSubFormats = get_terms('format');
 
                             if (!empty($getSubFormats) && !is_wp_error($getSubFormats)) {
                                 foreach ($getSubFormats as $getSubFormat) {
-                                    echo '<a href="#!" class="formatFilter" data-category="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
+                                    echo '<a href="#!" class="formatFilter" data-format="' . esc_attr($getSubFormat->slug) . '">' . esc_html($getSubFormat->name) . '</a>';
                                 }
                             }
                             ?>
@@ -90,7 +90,7 @@ get_header();
                         $years = array();
                         $posts = get_posts(array(
                             'post_type' => 'photo',
-                            'posts_per_page' => -1,
+                            'posts_per_page' => 8,
                             'orderby' => 'date',
                             'order' => 'DESC'
                         ));
@@ -119,25 +119,17 @@ get_header();
             <div class="images">
 
             <?php 
-            // Putting similar schema as in single-photo to retrieve the correct tax_query terms
-            // Get the current post ID
-            $currentPostId = get_the_ID();
-            // Get the categories of the current post
-            $termsC = get_the_terms($currentPostId, 'categorie');
-            $termsCArray = array();
-            if($termsC && !is_wp_error($termsC)) {
-                foreach($termsC as $terms) {
-                    $termsCArray[] = $terms->term_id;
-                }
-            }
-            // And the format
-            $termsF = get_the_terms($currentPostId, 'format');
-            $termsFArray = array();
-            if($termsF && !is_wp_error($termsF)) {
-                foreach($termsF as $terms) {
-                    $termsFArray[] = $terms->term_id;
-                }
-            }
+
+                // Get all term slugs for the 'categorie' taxonomy
+                $termsCArray = get_all_term_slugs('categorie');
+                // Get all term slugs for the 'format' taxonomy
+                $termsFArray = get_all_term_slugs('format');
+
+                // Debug output
+                print_r($termsCArray);
+                print_r($termsFArray);
+
+
 
                 $postsPerPage = 8;
                 $photo = new WP_Query([
@@ -147,16 +139,18 @@ get_header();
                 'order' => 'DESC',
                 'paged' => 1,
                 'tax_query' => array(
-                'relation' => 'AND',
+                'relation' => 'OR',
                 array(
                     'taxonomy' => 'categorie',
-                    'field' => 'term_id',
+                    'field' => 'slug',
                     'terms' => $termsCArray,
+                    'operator' => 'IN'
                 ),
                 array(
                     'taxonomy' => 'format',
-                    'field' => 'term_id',
+                    'field' => 'slug',
                     'terms' => $termsFArray,
+                    'operator' => 'IN'
                 )
             )
                 ]);

@@ -321,6 +321,23 @@ function get_term_ids($post_id, $taxonomy) {
     return $term_ids;
 }
 
+// Retrieve the slugs, important to use inside the querries
+function get_all_term_slugs($taxonomy) {
+	$terms = get_terms(array(
+		'taxonomy' => $taxonomy,
+		'hide_empty' => true,
+	));
+
+	$term_slugs = array();
+	if (!is_wp_error($terms) && !empty($terms)) {
+		foreach ($terms as $term) {
+			$term_slugs[] = $term->slug;
+		}
+	}
+
+	return $term_slugs;
+}
+
 // Get the images of the photo posts + their informations. This function allows to display all posts regarding to the following criterias. 
 // It is needed at the initial page load.
 function get_custom_posts_with_images() {
@@ -371,61 +388,60 @@ function get_custom_posts_with_images() {
     }
 }
 
-// This function however is made to be dynamic, to fetch only the photos that are coming from desired filters without reloading the page. 
+// This function however is made to be dynamic, to fetch only the photos that are coming from desired filters without reloading the page.
 // So both will be needed.
+//  Tutorial followed there https://weichie.com/blog/wordpress-filter-posts-with-ajax/ with explanations.
 function filter_custom_posts_ajax() {
-    // Gather the filters from the AJAX request
-    $categorie = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
-    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
-    $year = isset($_POST['year']) ? sanitize_text_field($_POST['year']) : '';
+	// Nonce is used for security measure
+	// if( !isset($_POST['afp_nonce']) || !wp_verify_nonce($_POST['afp_nonce'], 'afp_nonce') )
+	// die('Permission denied');
 
-	$args = array(
-        'post_type' => 'post',
-        'posts_per_page' => -1, // Adjust as needed
-        'meta_query' => array(
-            'relation' => 'AND',
-        ),
+	$term = sanitize_text_field($_POST['term']);
+    $taxonomy = sanitize_text_field($_POST['taxonomy']);
+
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => 8,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'tax_query' => array(
+			'relation' => 'AND',
+		)
     );
 
-    if ($category) {
+    if ($term !== 'all') {
         $args['tax_query'][] = array(
-            'taxonomy' => 'category',
+            'taxonomy' => 'categorie',
             'field' => 'slug',
-            'terms' => $categorie,
+            'terms' => $term,
+			'operator' => 'IN'
         );
     }
+	else {
+		$getAllTerms = get_terms(array(
+			'taxonomy' => $taxonomy,
+			'fields' => 'slugs',
+		));
+		$args['tax_query'][] = array(
+			'taxonomy' => $taxonomy,
+			'field' => 'slug',
+			'terms' => $getAllTerms,
+			'operator' => 'IN',
+		);
+	};
 
-    if ($format) {
-        $args['tax_query'][] = array(
-            'taxonomy' => 'format',
-            'field' => 'slug',
-            'terms' => $format,
-        );
-    }
-
-    if ($year) {
-        $args['date_query'] = array(
-            array(
-                'year' => $year,
-            ),
-        );
-    }
-
-    $query = new WP_Query($args);
-
-	$posts = array();
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-			get_template_part('template-parts'/'BlockPhoto', 'photo');
-        }
-    }
-
-    // Reset the post data
-    wp_reset_postdata();
-
-    // Return the response
-    wp_send_json_success($posts);
+	$photo = new WP_Query($args);
+  
+	if($photo->have_posts()) {
+		while($photo->have_posts()): $photo->the_post();
+		get_template_part('template-parts/BlockPhoto');
+		endwhile;
+		wp_reset_postdata();
+	} else {
+		echo '<p>Pas de post trouvé</p>';
+	}
+		
+	wp_die();
 }
 // action for logged in users
 add_action('wp_ajax_filter_custom_posts_ajax', 'filter_custom_posts_ajax');

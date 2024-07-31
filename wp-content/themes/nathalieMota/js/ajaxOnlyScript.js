@@ -1,94 +1,74 @@
 (function ($) {
-  // The AJAX part
-
-  // The filters CATFOR + Trier par interractions
-  // const filterContainer = document.querySelector(".filtersImages");
-
-  // const selectedFilters = {
-  //   categorie: "",
-  //   format: "",
-  //   year: "",
-  // };
-
-  // filterContainer.addEventListener("click", function (e) {
-  //   if (e.target.classList.contains("categoryFilter")) {
-  //     selectedFilters.category = e.target.getAttribute("data-category");
-  //     applyFilters();
-  //   }
-
-  //   if (e.target.classList.contains("formatFilter")) {
-  //     selectedFilters.format = e.target.getAttribute("data-format");
-  //     applyFilters();
-  //   }
-
-  //   if (e.target.classList.contains("yearFilter")) {
-  //     selectedFilters.year = e.target.getAttribute("data-year");
-  //     applyFilters();
-  //   }
-  // });
-
-  // function applyFilters() {
-  //   $.ajax({
-  //     url: "./wp-admin/admin-ajax.php",
-  //     type: "POST",
-  //     dataType: "json",
-  //     data: {
-  //       action: "filter_custom_posts_ajax",
-  //       categorie: "test",
-  //       format: selectedFilters.format,
-  //       year: selectedFilters.year,
-  //     },
-  //     success: function (response) {
-  //       console.log(response);
-  //       const container = $("#photosPostsContainer");
-  //       if (response.success) {
-  //         container.html(response);
-  //         //   response.data.forEach((post) => {
-  //         //     const postItem = `
-  //         //     <div class="postItem" data-category="${post.categorie.join(
-  //         //       ", "
-  //         //     )}" data-format="${post.format.join(", ")}" data-year="${
-  //         //       post.year
-  //         //     }">
-  //         //       <img src="${post.image}" alt="${post.alt_text}">
-  //         //     </div>`;
-  //         //     container.append(postItem);
-  //         //   });
-  //         // } else {
-  //         //   container.append("<p>Pas de photos trouvées</p>");
-  //       }
-  //     },
-  //     error: function (xhr, status, error) {
-  //       console.error("AJAX Error:", error);
-  //     },
-  //   });
-  // }
-
   // The loadMore button
 
-  function loadMore(paged) {
+  let currentPage = 1;
+  $("#loadMore").on("click", function (event) {
+    event.preventDefault();
+    currentPage++;
     $.ajax({
       type: "POST",
       url: "./wp-admin/admin-ajax.php",
       dataType: "json",
       data: {
         action: "load_more_photos",
-        paged,
+        paged: currentPage,
       },
       success: function (res) {
-        // Checking res all the time to see in the inspector what is inside the array.
         console.log(res);
-        if (paged >= res.max) {
+        if (currentPage >= res.max) {
           $("#loadMore").hide();
         }
         $(".images").append(res.html);
       },
     });
-  }
-
-  let newPage = 1;
-  $("#loadMore").on("click", function () {
-    loadMore(newPage + 1);
-    newPage++;
   });
+
+  // The filters
+  $(".categoryFilter").on("click", function () {
+    let filter = $(this).data("categorie");
+    $.ajax({
+      type: "POST",
+      url: "./wp-admin/admin-ajax.php",
+      dataType: "html",
+      data: {
+        action: "filter_custom_posts_ajax",
+        taxonomy: "categorie",
+        term: filter,
+      },
+      success: function (res) {
+        $(".images").html(res);
+      },
+    });
+  });
+  // $(".formatFilter").on("click", function () {
+  //   let filter2 = $(this).data("format");
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "./wp-admin/admin-ajax.php",
+  //     dataType: "html",
+  //     data: {
+  //       action: "filter_custom_posts_ajax",
+  //       taxonomy: "format",
+  //       term: filter2,
+  //     },
+  //     success: function (res) {
+  //       $(".images").html(res);
+  //     },
+  //   });
+  // });
+  // $(".formatFilter").on("click", function () {
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "./wp-admin/admin-ajax.php",
+  //     dataType: "html",
+  //     data: {
+  //       action: "filter_projects",
+  //       category: $(this).data("slug"),
+  //       type: $(this).data("type"),
+  //     },
+  //     success: function (res) {
+  //       $(".publicationList").html(res);
+  //     },
+  //   });
+  // });
 })(jQuery);

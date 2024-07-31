@@ -55,7 +55,7 @@ dropdownButton.forEach((button, index) => {
 categoryLinksCat.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
-    const categorie = event.target.dataset.category;
+    const categorie = event.target.dataset.categorie;
     if (categorie === "all") {
       dropdownButtonTextCat.innerHTML = `Catégorie <span class="arrow">&#9660;</span>`;
     } else {
@@ -73,7 +73,7 @@ categoryLinksCat.forEach((link) => {
 categoryLinksFor.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
-    const format = event.target.dataset.category;
+    const format = event.target.dataset.format;
     if (format === "all2") {
       dropdownButtonTextFor.innerHTML = `format <span class="arrow">&#9660;</span>`;
     } else {

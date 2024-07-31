@@ -154,10 +154,9 @@ get_header();
                     $queryCategoriesPhotos->the_post();
             
                     // Get the thumbnail URL of the post from the same category
-                    $thumbnailRCUrl = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                    ?>
-                    <img class="otherImage1 photoBox" src="<?= esc_url($thumbnailRCUrl) ?>" alt="<?= esc_attr(get_the_title()) ?>">
-                    <?php
+                    ?><div class="publicationList">
+                    <?php get_template_part('template-parts/BlockPhoto'); ?>
+                    </div><?php
                     $firstPostId = get_the_ID();
                 }
                 // Reset post data
@@ -190,11 +189,9 @@ get_header();
             while ($queryCategoriesPhotos2->have_posts()) {
                 $queryCategoriesPhotos2->the_post();
 
-                // Get the thumbnail URL of the post from the same category
-                $thumbnailRCUrl2 = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                ?>
-                <img class="otherImage2 photoBox" src="<?= esc_url($thumbnailRCUrl2) ?>" alt="<?= esc_attr(get_the_title()) ?>">
-                <?php
+                ?><div class="publicationList">
+                <?php get_template_part('template-parts/BlockPhoto'); ?>
+                </div><?php
             }
             // Reset post data for the second query
             wp_reset_postdata();

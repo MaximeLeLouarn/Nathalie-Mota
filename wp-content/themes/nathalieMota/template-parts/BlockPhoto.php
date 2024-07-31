@@ -7,6 +7,7 @@
     $currentPostAltText = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
     $currentPostReference= get_field('reference');
     $currentPostYear = get_the_date('Y');
+    $currentPostURL = get_permalink();
     // For the taxonomies it's a bit more specific. So first we go get the terms name
     $currentPostC = wp_get_post_terms($currentPostId, 'categorie');
     $currentPostF = wp_get_post_terms($currentPostId, 'format');
@@ -41,13 +42,12 @@
      For example, if $post['categorie'] is ['Nature', 'Wildlife'],
      implode(', ', $post['categorie']) will produce the string "Nature, Wildlife". -->
      <!-- LINES PROBLEM 31 32 35, CONVERSION ARRAY TO STRING -->
-    <div class="postItem" data-categorie="<?= $currentPostCat; ?>
-    " data-format="<?= $currentPostFor; ?>" data-year="<?= esc_attr($currentPostYear); ?>">
+    <div class="postItem" data-categorie="<?= $currentPostCat; ?>" data-format="<?= $currentPostFor; ?>" data-year="<?= esc_attr($currentPostYear); ?>" data-url="<?= esc_url($currentPostURL); ?>" >
             <div class="informationsHoverPhoto">
                 <h4 class="refPhotoLightbox"><?= esc_html($currentPostReference); ?></h4>
                 <h4 class="catPhotoLightbox"><?= $currentPostCat; ?></h4>
             </div>
-            <div class="iconEye" onclick="window.open('<?= esc_url($currentPostId); ?>', '_blank')"></div>
+            <div class="iconEye" onclick="window.open('<?= esc_url( $currentPostURL); ?>', '_blank')"></div>
             <div class="expandPhotoIcon"></div>
             <img class="imgPostItem" src="<?= esc_url($currentPostImage); ?>" alt="<?= esc_attr($currentPostAltText) ?>">
         </div>
