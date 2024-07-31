@@ -38,14 +38,14 @@ get_header();
 
                         <div class="dropdownContent">
                             <!-- To be able to come back to all photos without filter -->
-                        <a href="#!" class="categoryFilter" data-categorie="all">Tout</a>
+                        <a href="#!" class="categorieFilter" data-categorie="all">Tout</a>
                         <!-- And go fetch all the other possible options -->
                             <?php
                             $getSubCategories = get_terms('categorie');
 
                             if (!empty($getSubCategories) && !is_wp_error($getSubCategories)) {
                                 foreach ($getSubCategories as $getSubCategory) {
-                                    echo '<a href="#" class="categoryFilter" data-categorie="' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
+                                    echo '<a href="#" class="categorieFilter" data-categorie="' . esc_attr($getSubCategory->slug) . '">' . esc_html($getSubCategory->name) . '</a>';
                                 }
                             }
                             ?>
@@ -126,8 +126,8 @@ get_header();
                 $termsFArray = get_all_term_slugs('format');
 
                 // Debug output
-                print_r($termsCArray);
-                print_r($termsFArray);
+                // print_r($termsCArray);
+                // print_r($termsFArray);
 
 
 
@@ -157,14 +157,15 @@ get_header();
                 
                 // If it doesn't work, let's try different structure where we can endwhile after get_template_part and reset after endif.
                 // Tutorial followed at this link: https://weichie.com/blog/load-more-posts-ajax-wordpress/.
-                if ($photo->have_posts()) : 
+                // The position of the div is important in this way, or it will keep displaying many divs
+                if ($photo->have_posts()) : ?>
+                    <div class="publicationList"><?php
                     while ($photo->have_posts()) : $photo->the_post(); ?>
-                        <div class="publicationList">
-                            <?php get_template_part('template-parts/BlockPhoto'); ?>
-                            </div>
-                            <?php
+                            <?php get_template_part('template-parts/BlockPhoto');
+                            
                             endwhile; 
                             // Try to debug and understand what could cause no post to appear on page load
+                            ?></div><?php
                             else :
                             echo '<p>No posts found.</p>';?>
                 <?php endif; 

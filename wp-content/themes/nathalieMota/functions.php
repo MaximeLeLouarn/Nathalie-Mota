@@ -396,8 +396,10 @@ function filter_custom_posts_ajax() {
 	// if( !isset($_POST['afp_nonce']) || !wp_verify_nonce($_POST['afp_nonce'], 'afp_nonce') )
 	// die('Permission denied');
 
-	$term = sanitize_text_field($_POST['term']);
-    $taxonomy = sanitize_text_field($_POST['taxonomy']);
+	$categorieTerm = sanitize_text_field($_POST['categorie']);
+    $formatTerm = sanitize_text_field($_POST['format']);
+	// Also retrieve the page for the compatibility filters / load more
+	$paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
 
     $args = array(
         'post_type' => 'photo',
@@ -409,21 +411,41 @@ function filter_custom_posts_ajax() {
 		)
     );
 
-    if ($term !== 'all') {
+    if ($categorieTerm !== 'all') {
         $args['tax_query'][] = array(
             'taxonomy' => 'categorie',
             'field' => 'slug',
-            'terms' => $term,
+            'terms' => $categorieTerm,
 			'operator' => 'IN'
         );
     }
 	else {
 		$getAllTerms = get_terms(array(
-			'taxonomy' => $taxonomy,
+			'taxonomy' => 'categorie',
 			'fields' => 'slugs',
 		));
 		$args['tax_query'][] = array(
-			'taxonomy' => $taxonomy,
+			'taxonomy' => 'categorie',
+			'field' => 'slug',
+			'terms' => $getAllTerms,
+			'operator' => 'IN',
+		);
+	};
+    if ($formatTerm !== 'all2') {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format',
+            'field' => 'slug',
+            'terms' => $formatTerm,
+			'operator' => 'IN'
+        );
+    }
+	else {
+		$getAllTerms = get_terms(array(
+			'taxonomy' => 'format',
+			'fields' => 'slugs',
+		));
+		$args['tax_query'][] = array(
+			'taxonomy' => 'format',
 			'field' => 'slug',
 			'terms' => $getAllTerms,
 			'operator' => 'IN',

@@ -4,7 +4,7 @@ const arrow = document.querySelectorAll(".arrow");
 const dropdownButtonTextCat = document.querySelector(".dropdownButtonTextCat");
 const dropdownButtonTextFor = document.querySelector(".dropdownButtonTextFor");
 const dropdownButtonTextTri = document.querySelector(".dropdownButtonTextTri");
-const categoryLinksCat = document.querySelectorAll(".categoryFilter");
+const categoryLinksCat = document.querySelectorAll(".categorieFilter");
 const categoryLinksFor = document.querySelectorAll(".formatFilter");
 const categoryLinksTri = document.querySelectorAll(".yearFilter");
 // photoPosts Item might be used

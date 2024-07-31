@@ -169,13 +169,21 @@ get_header();
             ?>
             <!-- With the same method, get the second image, just adding the exclusion of the first image to not have it repeated -->
             <?php
+            $termsCArray2 = array();
+            if($termsC && !is_wp_error($termsC)) {
+                foreach($termsC as $terms) {
+                $termsCArray2[] = $terms->term_id;
+                }
+            }
+
+
              $argsC2P2 = array(
             'post_type' => 'photo', // Replace with your actual custom post type
             'tax_query' => array(
                 array(
                     'taxonomy' => 'categorie',
                     'field' => 'term_id',
-                    'terms' => $termsCIds,
+                    'terms' => $termsCArray2,
                 ),
             ),
             'post__not_in' => array($currentPostId, $firstPostId),

@@ -45,3 +45,136 @@
 [31-Jul-2024 12:16:15 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
 [31-Jul-2024 12:16:15 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
 [31-Jul-2024 12:16:15 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 12:46:01 UTC] PHP Warning:  Undefined variable $query in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 474
+[31-Jul-2024 12:46:01 UTC] PHP Stack trace:
+[31-Jul-2024 12:46:01 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 12:46:01 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 12:46:01 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 12:46:01 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 12:46:01 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 12:46:01 UTC] PHP Warning:  Attempt to read property "max_num_pages" on null in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 474
+[31-Jul-2024 12:46:01 UTC] PHP Stack trace:
+[31-Jul-2024 12:46:01 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 12:46:01 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 12:46:01 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 12:46:01 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 12:46:01 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 12:46:07 UTC] PHP Warning:  Undefined variable $query in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 474
+[31-Jul-2024 12:46:07 UTC] PHP Stack trace:
+[31-Jul-2024 12:46:07 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 12:46:07 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 12:46:07 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 12:46:07 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 12:46:07 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 12:46:07 UTC] PHP Warning:  Attempt to read property "max_num_pages" on null in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 474
+[31-Jul-2024 12:46:07 UTC] PHP Stack trace:
+[31-Jul-2024 12:46:07 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 12:46:07 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 12:46:07 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 12:46:07 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 12:46:07 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 12:46:09 UTC] PHP Warning:  Undefined variable $query in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 474
+[31-Jul-2024 12:46:09 UTC] PHP Stack trace:
+[31-Jul-2024 12:46:09 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 12:46:09 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 12:46:09 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 12:46:09 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 12:46:09 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 12:46:09 UTC] PHP Warning:  Attempt to read property "max_num_pages" on null in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 474
+[31-Jul-2024 12:46:09 UTC] PHP Stack trace:
+[31-Jul-2024 12:46:09 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 12:46:09 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 12:46:09 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 12:46:09 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 12:46:09 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 14:37:56 UTC] Automatic updates starting...
+[31-Jul-2024 14:37:57 UTC]   Automatic plugin updates starting...
+[31-Jul-2024 14:37:57 UTC]   Automatic plugin updates complete.
+[31-Jul-2024 14:37:58 UTC]   Automatic theme updates starting...
+[31-Jul-2024 14:37:58 UTC]   Automatic theme updates complete.
+[31-Jul-2024 14:37:58 UTC] Automatic updates complete.
+[31-Jul-2024 14:38:05 UTC] PHP Warning:  Undefined variable $counter in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 468
+[31-Jul-2024 14:38:05 UTC] PHP Stack trace:
+[31-Jul-2024 14:38:05 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 14:38:05 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 14:38:05 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 14:38:05 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 14:38:05 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:02:22 UTC] PHP Warning:  Undefined variable $query in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 518
+[31-Jul-2024 17:02:22 UTC] PHP Stack trace:
+[31-Jul-2024 17:02:22 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 17:02:22 UTC] PHP   2. do_action($hook_name = 'wp_ajax_load_more_photos') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 17:02:22 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 17:02:22 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 17:02:22 UTC] PHP   5. load_more_photos('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:02:22 UTC] PHP Warning:  Attempt to read property "max_num_pages" on null in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 518
+[31-Jul-2024 17:02:22 UTC] PHP Stack trace:
+[31-Jul-2024 17:02:22 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 17:02:22 UTC] PHP   2. do_action($hook_name = 'wp_ajax_load_more_photos') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 17:02:22 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 17:02:22 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 17:02:22 UTC] PHP   5. load_more_photos('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:16:37 UTC] PHP Warning:  Undefined variable $query in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 471
+[31-Jul-2024 17:16:37 UTC] PHP Stack trace:
+[31-Jul-2024 17:16:37 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 17:16:37 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 17:16:37 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 17:16:37 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 17:16:37 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:16:37 UTC] PHP Warning:  Attempt to read property "max_num_pages" on null in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 471
+[31-Jul-2024 17:16:37 UTC] PHP Stack trace:
+[31-Jul-2024 17:16:37 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 17:16:37 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 17:16:37 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 17:16:37 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 17:16:37 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:16:37 UTC] PHP Warning:  Undefined variable $query in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 475
+[31-Jul-2024 17:16:37 UTC] PHP Stack trace:
+[31-Jul-2024 17:16:37 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 17:16:37 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 17:16:37 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 17:16:37 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 17:16:37 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:16:37 UTC] PHP Warning:  Attempt to read property "max_num_pages" on null in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 475
+[31-Jul-2024 17:16:37 UTC] PHP Stack trace:
+[31-Jul-2024 17:16:37 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 17:16:37 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 17:16:37 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 17:16:37 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 17:16:37 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 17:19:37 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
+[31-Jul-2024 17:19:37 UTC] PHP Stack trace:
+[31-Jul-2024 17:19:37 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 17:19:37 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 17:19:37 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 17:19:37 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 17:21:15 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
+[31-Jul-2024 17:21:15 UTC] PHP Stack trace:
+[31-Jul-2024 17:21:15 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 17:21:15 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 17:21:15 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 17:21:15 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 17:22:29 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
+[31-Jul-2024 17:22:29 UTC] PHP Stack trace:
+[31-Jul-2024 17:22:29 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 17:22:29 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 17:22:29 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 17:22:29 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 17:25:21 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
+[31-Jul-2024 17:25:21 UTC] PHP Stack trace:
+[31-Jul-2024 17:25:21 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 17:25:21 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 17:25:21 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 17:25:21 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 17:25:24 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
+[31-Jul-2024 17:25:24 UTC] PHP Stack trace:
+[31-Jul-2024 17:25:24 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 17:25:24 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 17:25:24 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 17:25:24 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 17:32:18 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 189
+[31-Jul-2024 17:32:18 UTC] PHP Stack trace:
+[31-Jul-2024 17:32:18 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 17:32:18 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 17:32:18 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 17:32:18 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
