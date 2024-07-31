@@ -1,100 +1,47 @@
-[30-Jul-2024 11:37:55 UTC] PHP Warning:  Undefined variable $termsCArray in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php on line 150
-[30-Jul-2024 11:37:55 UTC] PHP Stack trace:
-[30-Jul-2024 11:37:55 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
-[30-Jul-2024 11:37:55 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
-[30-Jul-2024 11:37:55 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
-[30-Jul-2024 11:37:55 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
-[30-Jul-2024 11:37:55 UTC] PHP Fatal error:  Uncaught TypeError: implode(): Argument #1 ($array) must be of type array, string given in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php:150
-Stack trace:
-#0 C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php(150): implode(',', NULL)
-#1 C:\wamp64\www\sitePhotos\wp-includes\template-loader.php(106): include('C:\\wamp64\\www\\s...')
-#2 C:\wamp64\www\sitePhotos\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\s...')
-#3 C:\wamp64\www\sitePhotos\index.php(17): require('C:\\wamp64\\www\\s...')
-#4 {main}
-  thrown in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\template-test.php on line 150
-[30-Jul-2024 13:15:14 UTC] Automatic updates starting...
-[30-Jul-2024 13:15:14 UTC]   Automatic plugin updates starting...
-[30-Jul-2024 13:15:14 UTC]   Automatic plugin updates complete.
-[30-Jul-2024 13:15:15 UTC]   Automatic theme updates starting...
-[30-Jul-2024 13:15:15 UTC]   Automatic theme updates complete.
-[30-Jul-2024 13:15:15 UTC] Automatic updates complete.
-[30-Jul-2024 16:02:29 UTC] PHP Warning:  Undefined array key "category" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 395
-[30-Jul-2024 16:02:29 UTC] PHP Stack trace:
-[30-Jul-2024 16:02:29 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[30-Jul-2024 16:02:29 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[30-Jul-2024 16:02:29 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[30-Jul-2024 16:02:29 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[30-Jul-2024 16:02:29 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[30-Jul-2024 16:02:36 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 179
-[30-Jul-2024 16:02:36 UTC] PHP Stack trace:
-[30-Jul-2024 16:02:36 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
-[30-Jul-2024 16:02:36 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
-[30-Jul-2024 16:02:36 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
-[30-Jul-2024 16:02:36 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
-[30-Jul-2024 16:03:11 UTC] PHP Warning:  Undefined array key "categorie" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 395
-[30-Jul-2024 16:03:11 UTC] PHP Stack trace:
-[30-Jul-2024 16:03:11 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[30-Jul-2024 16:03:11 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[30-Jul-2024 16:03:11 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[30-Jul-2024 16:03:11 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[30-Jul-2024 16:03:11 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[30-Jul-2024 16:06:06 UTC] PHP Warning:  Undefined array key "category" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 395
-[30-Jul-2024 16:06:06 UTC] PHP Stack trace:
-[30-Jul-2024 16:06:06 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[30-Jul-2024 16:06:06 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[30-Jul-2024 16:06:06 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[30-Jul-2024 16:06:06 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[30-Jul-2024 16:06:06 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[30-Jul-2024 16:06:51 UTC] PHP Warning:  Undefined array key "categorie" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 395
-[30-Jul-2024 16:06:51 UTC] PHP Stack trace:
-[30-Jul-2024 16:06:51 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[30-Jul-2024 16:06:51 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[30-Jul-2024 16:06:51 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[30-Jul-2024 16:06:51 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[30-Jul-2024 16:06:51 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[30-Jul-2024 20:09:30 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
-[30-Jul-2024 20:09:30 UTC] PHP Stack trace:
-[30-Jul-2024 20:09:30 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
-[30-Jul-2024 20:09:30 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
-[30-Jul-2024 20:09:30 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
-[30-Jul-2024 20:09:30 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
-[30-Jul-2024 20:09:35 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
-[30-Jul-2024 20:09:35 UTC] PHP Stack trace:
-[30-Jul-2024 20:09:35 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
-[30-Jul-2024 20:09:35 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
-[30-Jul-2024 20:09:35 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
-[30-Jul-2024 20:09:35 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
-[31-Jul-2024 08:59:49 UTC] Automatic updates starting...
-[31-Jul-2024 08:59:50 UTC]   Automatic plugin updates starting...
-[31-Jul-2024 08:59:50 UTC]   Automatic plugin updates complete.
-[31-Jul-2024 08:59:51 UTC]   Automatic theme updates starting...
-[31-Jul-2024 08:59:51 UTC]   Automatic theme updates complete.
-[31-Jul-2024 08:59:51 UTC] Automatic updates complete.
-[31-Jul-2024 08:59:52 UTC] PHP Warning:  Undefined variable $category in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 409
-[31-Jul-2024 08:59:52 UTC] PHP Stack trace:
-[31-Jul-2024 08:59:52 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[31-Jul-2024 08:59:52 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[31-Jul-2024 08:59:52 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[31-Jul-2024 08:59:52 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[31-Jul-2024 08:59:52 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[31-Jul-2024 08:59:52 UTC] PHP Warning:  Undefined variable $category in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 413
-[31-Jul-2024 08:59:52 UTC] PHP Stack trace:
-[31-Jul-2024 08:59:52 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[31-Jul-2024 08:59:52 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[31-Jul-2024 08:59:52 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[31-Jul-2024 08:59:52 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[31-Jul-2024 08:59:52 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[31-Jul-2024 09:01:52 UTC] PHP Warning:  Undefined array key "term" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 399
-[31-Jul-2024 09:01:52 UTC] PHP Stack trace:
-[31-Jul-2024 09:01:52 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[31-Jul-2024 09:01:52 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[31-Jul-2024 09:01:52 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[31-Jul-2024 09:01:52 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[31-Jul-2024 09:01:52 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
-[31-Jul-2024 09:51:53 UTC] PHP Warning:  Undefined array key "term" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 399
-[31-Jul-2024 09:51:53 UTC] PHP Stack trace:
-[31-Jul-2024 09:51:53 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
-[31-Jul-2024 09:51:53 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
-[31-Jul-2024 09:51:53 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
-[31-Jul-2024 09:51:53 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
-[31-Jul-2024 09:51:53 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 10:59:49 UTC] PHP Warning:  Undefined array key "categorie" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 401
+[31-Jul-2024 10:59:49 UTC] PHP Stack trace:
+[31-Jul-2024 10:59:49 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 10:59:49 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 10:59:49 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 10:59:49 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 10:59:49 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 10:59:52 UTC] PHP Warning:  Undefined array key "format" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 402
+[31-Jul-2024 10:59:52 UTC] PHP Stack trace:
+[31-Jul-2024 10:59:52 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 10:59:52 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 10:59:52 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 10:59:52 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 10:59:52 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 10:59:55 UTC] PHP Warning:  Undefined array key "format" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 402
+[31-Jul-2024 10:59:55 UTC] PHP Stack trace:
+[31-Jul-2024 10:59:55 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 10:59:55 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 10:59:55 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 10:59:55 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 10:59:55 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 10:59:57 UTC] PHP Warning:  Undefined array key "format" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 402
+[31-Jul-2024 10:59:57 UTC] PHP Stack trace:
+[31-Jul-2024 10:59:57 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 10:59:57 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 10:59:57 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 10:59:57 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 10:59:57 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 10:59:58 UTC] PHP Warning:  Undefined array key "categorie" in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\functions.php on line 401
+[31-Jul-2024 10:59:58 UTC] PHP Stack trace:
+[31-Jul-2024 10:59:58 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:0
+[31-Jul-2024 10:59:58 UTC] PHP   2. do_action($hook_name = 'wp_ajax_filter_custom_posts_ajax') C:\wamp64\www\sitePhotos\wp-admin\admin-ajax.php:192
+[31-Jul-2024 10:59:58 UTC] PHP   3. WP_Hook->do_action($args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\plugin.php:517
+[31-Jul-2024 10:59:58 UTC] PHP   4. WP_Hook->apply_filters($value = '', $args = [0 => '']) C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:348
+[31-Jul-2024 10:59:58 UTC] PHP   5. filter_custom_posts_ajax('') C:\wamp64\www\sitePhotos\wp-includes\class-wp-hook.php:324
+[31-Jul-2024 12:16:15 UTC] PHP Warning:  Undefined variable $termsCIds in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 178
+[31-Jul-2024 12:16:15 UTC] PHP Stack trace:
+[31-Jul-2024 12:16:15 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 12:16:15 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 12:16:15 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 12:16:15 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
+[31-Jul-2024 12:16:15 UTC] PHP Warning:  Undefined variable $firstPostId in C:\wamp64\www\sitePhotos\wp-content\themes\nathaliemota\single-photo.php on line 181
+[31-Jul-2024 12:16:15 UTC] PHP Stack trace:
+[31-Jul-2024 12:16:15 UTC] PHP   1. {main}() C:\wamp64\www\sitePhotos\index.php:0
+[31-Jul-2024 12:16:15 UTC] PHP   2. require() C:\wamp64\www\sitePhotos\index.php:17
+[31-Jul-2024 12:16:15 UTC] PHP   3. require_once() C:\wamp64\www\sitePhotos\wp-blog-header.php:19
+[31-Jul-2024 12:16:15 UTC] PHP   4. include() C:\wamp64\www\sitePhotos\wp-includes\template-loader.php:106
