@@ -7,6 +7,23 @@
   let currentFormat = "all2";
   let currentOrder = "DESC";
   const arrow = document.querySelectorAll(".arrow");
+
+  // Function to reinitialize the lazy load from EWWW. Without it, the images will loose the lazyload class
+  // after interacting with the filters
+  function reinitializePlugins() {
+    document.querySelectorAll(".imgPostItem").forEach((img) => {
+      if (!img.classList.contains("lazyloaded")) {
+        img.classList.add("lazyload");
+      }
+    });
+
+    if (typeof lazySizes !== "undefined") {
+      lazySizes.init();
+    }
+
+    // Rebind lightbox event listeners
+    initLightbox();
+  }
   // const allOrders = document.querySelectorAll(".yearFilter");
   // To reuse their value in the ajax request
   function applyFilters() {
@@ -43,6 +60,7 @@
         } else {
           $("#loadMore").show();
         }
+        reinitializePlugins();
       },
     });
   }
@@ -145,6 +163,7 @@
           $("#loadMore").hide();
         }
         $(".images").append(res.html);
+        reinitializePlugins();
       },
     });
   });
