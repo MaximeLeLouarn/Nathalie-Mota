@@ -795,7 +795,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     box-sizing: border-box;
     gap: 24px;
   }
-  .otherPhotos .otherPhotosContainer .otherImgsBox .publicationList .photosPostsContainer .postItem {
+  .otherPhotos .otherPhotosContainer .otherImgsBox .photosPostsContainer .postItem {
     width: auto !important;
   }
   .otherPhotos .otherPhotosContainer .otherImgsBox .photoBox {

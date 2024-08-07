@@ -886,11 +886,10 @@ footer#colophon {
                 gap: 24px;
                 // Going to put a width auto inside a very specific path, to get the postItem class of the single page.
                 // Otherwise, the width is broken.
-                .publicationList {
-                    .photosPostsContainer {
-                        .postItem {
-                            width: auto !important;
-                        }
+
+                .photosPostsContainer {
+                    .postItem {
+                        width: auto !important;
                     }
                 }
 
