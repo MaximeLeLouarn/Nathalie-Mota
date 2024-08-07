@@ -12,11 +12,15 @@ const catPL = document.querySelector(".catPhotoLightbox");
 let currentIndex;
 
 postItems.forEach((item, index) => {
-  const expandIcon = item.querySelector(".expandPhotoIcon");
-  if (expandIcon) {
-    expandIcon.addEventListener("click", () => {
-      currentIndex = index;
-      openModal(item);
+  const expandIcons = item.querySelectorAll(".expandPhotoIcon");
+  // ExpandIcons returns a nodeList, so we need to go fetch each element inside it with a forEach
+
+  if (expandIcons.length > 0) {
+    expandIcons.forEach((expandIcon) => {
+      expandIcon.addEventListener("click", () => {
+        currentIndex = index;
+        openModal(item);
+      });
     });
   } else {
     item.addEventListener("click", () => {

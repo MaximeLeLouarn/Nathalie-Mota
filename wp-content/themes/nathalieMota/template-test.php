@@ -87,26 +87,18 @@ get_header();
 
                         <div class="dropdownContent">
                         <?php
-                        $years = array();
-                        $posts = get_posts(array(
-                            'post_type' => 'photo',
-                            'posts_per_page' => 8,
-                            'orderby' => 'date',
-                            'order' => 'DESC'
-                        ));
-                        if ($posts) {
-                            foreach ($posts as $post) {
-                                $year = get_the_date('Y', $post);
-                                if (!in_array($year, $years)) {
-                                    $years[] = $year;
-                                }
-                            }
+                        // $years = array();
+                        // $posts = get_posts(array(
+                        //     'post_type' => 'photo',
+                        //     'posts_per_page' => 8,
+                        //     'orderby' => 'date',
+                        //     'order' => 'DESC'
+                        // ));
 
-                                echo '<a href="#!" class="yearFilter" data-sort-order="newest">Descendant</a>';
-                                echo '<a href="#!" class="yearFilter" data-sort-order="oldest">Ascendant</a>';
+                                echo '<a href="#!" class="yearFilter" data-direction="DESC">Descendant</a>';
+                                echo '<a href="#!" class="yearFilter" data-direction="ASC">Ascendant</a>';
 
-                        }
-                        ?>
+                                ?>
                         </div>
 
                     </div>

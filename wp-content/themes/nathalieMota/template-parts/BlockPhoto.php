@@ -41,7 +41,6 @@
      takes the array of term names and joins them into a single string, with each term separated by a comma and a space.
      For example, if $post['categorie'] is ['Nature', 'Wildlife'],
      implode(', ', $post['categorie']) will produce the string "Nature, Wildlife". -->
-     <!-- LINES PROBLEM 31 32 35, CONVERSION ARRAY TO STRING -->
     <div class="postItem" data-categorie="<?= $currentPostCat; ?>" data-format="<?= $currentPostFor; ?>" data-year="<?= esc_attr($currentPostYear); ?>" data-url="<?= esc_url($currentPostURL); ?>" >
             <div class="informationsHoverPhoto">
                 <h4 class="refPhotoLightbox"><?= esc_html($currentPostReference); ?></h4>
@@ -52,15 +51,14 @@
             <img class="imgPostItem" src="<?= esc_url($currentPostImage); ?>" alt="<?= esc_attr($currentPostAltText) ?>">
         </div>
     
-</div>
-
-<!-- Structure for the modal lightbox -->
-<div id="photoModal" class="photoModal">
-    <span class="closePhotoModal">&times;</span>
-    <img class="modalPhotoContent" id="expandedImg">
-    <div class="modalPhotoCaption" id="modalPhotoCaption"></div>
-    <div class="navigationLightbox">
-        <div class="arrowLight leftLight" id="prevPostLightbox">&#9664; Previous Post</div>
-        <div class="arrowLight rightLight" id="nextPostLightbox">Next Post &#9654;</div>
-    </div>
+        <!-- Structure for the modal lightbox -->
+        <div id="photoModal" class="photoModal">
+            <span class="closePhotoModal">&times;</span>
+            <img class="modalPhotoContent" id="expandedImg">
+            <div class="modalPhotoCaption" id="modalPhotoCaption"></div>
+            <div class="navigationLightbox">
+                <div class="arrowLight leftLight" id="prevPostLightbox">&#9664; Previous Post</div>
+                <div class="arrowLight rightLight" id="nextPostLightbox">Next Post &#9654;</div>
+            </div>
+        </div>
 </div>

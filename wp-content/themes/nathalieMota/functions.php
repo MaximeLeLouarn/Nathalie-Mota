@@ -150,18 +150,18 @@ function nathaliemota_scripts() {
 	wp_enqueue_script( 'nathaliemota-contactModal', get_template_directory_uri() . '/js/modal.js', array(), _S_VERSION, true );
 	if( is_single()) {wp_enqueue_script( 'nathaliemota-thumbnailsNavigatip,', get_template_directory_uri() . '/js/thumbnailsNav.js', array(), _S_VERSION, true );};
 	wp_enqueue_script( 'nathaliemota-dropdownMenus,', get_template_directory_uri() . '/js/dropdownMenus.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'nathaliemota-lightbox,', get_template_directory_uri() . '/js/lightbox.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'nathaliemota-ajaxFordropdownMenus,', get_template_directory_uri() . '/js/ajaxOnlyScript.js', array('jquery'), _S_VERSION, true );
-	    // Localize the script to prepare for AJAX
-		// wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
+	wp_enqueue_script( 'nathaliemota-lightbox,', get_template_directory_uri() . '/js/lightbox.js', array(), _S_VERSION, true );
+	// Localize the script to prepare for AJAX
+	// wp_localize_script('nathaliemota-ajaxFordropdownMenus', 'ajax_object', array(
 		// 	// Pass the AJAX URL to the script
 		// 	'ajax_url' => admin_url('admin-ajax.php')  
 		// ));
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+		
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
-}
 add_action( 'wp_enqueue_scripts', 'nathaliemota_scripts' );
 
 // Enqueue the ajax based scripts
@@ -398,14 +398,17 @@ function filter_custom_posts_ajax() {
 
 	$categorieTerm = sanitize_text_field($_POST['categorie']);
     $formatTerm = sanitize_text_field($_POST['format']);
+	$order = isset($_POST['direction']) ? sanitize_text_field($_POST['direction']) : 'DESC';
 	// Also retrieve the page for the compatibility filters / load more
 	$paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
 
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => 8,
+		'paged' => $paged,
         'orderby' => 'date',
-        'order' => 'DESC',
+		// Retrieve data order
+        'order' => $order,
         'tax_query' => array(
 			'relation' => 'AND',
 		)
@@ -474,21 +477,70 @@ add_action('wp_ajax_nopriv_filter_custom_posts_ajax', 'filter_custom_posts_ajax'
 function load_more_photos() {
 	// Get the paged parameter
 	$paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
+	$categorieTerm = sanitize_text_field($_POST['categorie']);
+    $formatTerm = sanitize_text_field($_POST['format']);
+	$order = isset($_POST['direction']) ? sanitize_text_field($_POST['direction']) : 'DESC';
 	// // Log paged value for debugging
 	// error_log('Paged: ' . $paged);
 	$postsPerPage = 8;
-	$photo = new WP_Query([
+	$args = array(
 		'post_type' => 'photo',
 		'posts_per_page' => $postsPerPage,
 		'orderby' => 'date',
-		'order' => 'DESC',
+		'order' => $order,
 		'paged' => $paged,
-	  ]);
+		'tax_query' => array(
+			'relation' => 'AND',
+		)
+	  );
+	  
+	  if ($categorieTerm !== 'all') {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categorie',
+            'field' => 'slug',
+            'terms' => $categorieTerm,
+			'operator' => 'IN'
+        );
+    }
+	else {
+		$getAllTerms = get_terms(array(
+			'taxonomy' => 'categorie',
+			'fields' => 'slugs',
+		));
+		$args['tax_query'][] = array(
+			'taxonomy' => 'categorie',
+			'field' => 'slug',
+			'terms' => $getAllTerms,
+			'operator' => 'IN',
+		);
+	};
+    if ($formatTerm !== 'all2') {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format',
+            'field' => 'slug',
+            'terms' => $formatTerm,
+			'operator' => 'IN'
+        );
+    }
+	else {
+		$getAllTerms = get_terms(array(
+			'taxonomy' => 'format',
+			'fields' => 'slugs',
+		));
+		$args['tax_query'][] = array(
+			'taxonomy' => 'format',
+			'field' => 'slug',
+			'terms' => $getAllTerms,
+			'operator' => 'IN',
+		);
+	};
+
+	$photo = new WP_Query($args);
 	
-	  $response = '';
-	  $max_pages = $photo->max_num_pages;
+	$response = '';
+	$max_pages = $photo->max_num_pages;
 	
-	  if($photo->have_posts()) {
+	if($photo->have_posts()) {
 		ob_start();
 		while($photo->have_posts()) : $photo->the_post();
 			get_template_part('template-parts/BlockPhoto');
@@ -496,12 +548,14 @@ function load_more_photos() {
 		$response = ob_get_clean();
 		// Log the response for debugging
 		// error_log('Response HTML: ' . $response);
-	  }
+		$result = [
+		  'max' => $max_pages,
+		  'html' => $response,
+		];
+	} else {
+		$result['html'] = '<p>Plus de posts à venir</p>';
+	}
 
-	  $result = [
-		'max' => $max_pages,
-		'html' => $response,
-	  ];
 	
 	  echo json_encode($result);
 	  wp_die();
