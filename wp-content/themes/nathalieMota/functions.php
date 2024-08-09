@@ -339,54 +339,55 @@ function get_all_term_slugs($taxonomy) {
 }
 
 // Get the images of the photo posts + their informations. This function allows to display all posts regarding to the following criterias. 
-// It is needed at the initial page load.
-function get_custom_posts_with_images() {
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 8,
-		'paged' => 1,
-		'order' => 'DESC',
-		'tax_query' => array(
-			'relation' => 'AND',
-			array(
-				'taxonomy' => 'categorie',
-				'field' => 'term_id',
-				'terms' => '',
-				'operator' => 'IN'
-			),
-			array(
-				'taxonomy' => 'format',
-				'field' => 'term_id',
-				'terms' => '',
-				'operator' => 'IN'
-			)
-		)
-    );
+// It is needed at the initial page load. -> !!! The method changed but the informations inside this function can 
+// still be used to know how to tetreive some data.
+// function get_custom_posts_with_images() {
+//     $args = array(
+//         'post_type' => 'photo',
+//         'posts_per_page' => 8,
+// 		'paged' => 1,
+// 		'order' => 'DESC',
+// 		'tax_query' => array(
+// 			'relation' => 'AND',
+// 			array(
+// 				'taxonomy' => 'categorie',
+// 				'field' => 'term_id',
+// 				'terms' => '',
+// 				'operator' => 'IN'
+// 			),
+// 			array(
+// 				'taxonomy' => 'format',
+// 				'field' => 'term_id',
+// 				'terms' => '',
+// 				'operator' => 'IN'
+// 			)
+// 		)
+//     );
 
-    $query = new WP_Query($args);
+//     $query = new WP_Query($args);
 
-    if ($query->have_posts()) {
-        $posts = array();
-        while ($query->have_posts()) {
-            $query->the_post();
-            $posts[] = array(
-				'ID' => get_the_ID(),
-                'title' => get_the_title(),
-                'image' => get_the_post_thumbnail_url(),
-                'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
-				// To the difference of single-photo, we use the parameter 'get_the_ID' inside the more global function instead of in 
-				// another variable, that we would have to call later.
-				'categorie' => wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'names')), // Get the taxonomy term names
-                'format' => wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names')), // Get the taxonomy term names
-                'year' => get_the_date('Y')
-            );
-        }
-        wp_reset_postdata();
-        return $posts;
-    } else {
-        return array();
-    }
-}
+//     if ($query->have_posts()) {
+//         $posts = array();
+//         while ($query->have_posts()) {
+//             $query->the_post();
+//             $posts[] = array(
+// 				'ID' => get_the_ID(),
+//                 'title' => get_the_title(),
+//                 'image' => get_the_post_thumbnail_url(),
+//                 'alt_text' => get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true),
+// 				// To the difference of single-photo, we use the parameter 'get_the_ID' inside the more global function instead of in 
+// 				// another variable, that we would have to call later.
+// 				'categorie' => wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'names')), // Get the taxonomy term names
+//                 'format' => wp_get_post_terms(get_the_ID(), 'format', array('fields' => 'names')), // Get the taxonomy term names
+//                 'year' => get_the_date('Y')
+//             );
+//         }
+//         wp_reset_postdata();
+//         return $posts;
+//     } else {
+//         return array();
+//     }
+// }
 
 // This function however is made to be dynamic, to fetch only the photos that are coming from desired filters without reloading the page.
 // So both will be needed.

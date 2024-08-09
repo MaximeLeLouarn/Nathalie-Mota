@@ -455,9 +455,6 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 }
 .firstContainerPhoto {
   box-sizing: border-box;
-  margin-right: 8%;
-  margin-left: 8%;
-  padding-top: 3%;
 }
 .firstContainerPhoto .photoPost {
   box-sizing: border-box;
@@ -469,9 +466,9 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   flex-direction: column;
 }
 .firstContainerPhoto .photoPost .photoInformations {
+  box-sizing: border-box;
   text-transform: uppercase;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -532,7 +529,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 }
 .otherPhotos .otherPhotosContainer h3 {
   text-align: center;
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 .otherPhotos .otherPhotosContainer .otherImgsBox {
   display: flex;
@@ -558,7 +555,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     align-items: flex-start;
   }
   .firstContainerPhoto .imgPhoto {
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -567,8 +564,7 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   .firstContainerPhoto .imgPhoto img {
     -o-object-fit: cover;
        object-fit: cover;
-    max-width: 95vw;
-    max-height: 80vh;
+    max-width: 100vw;
   }
   .firstContainerPhoto .photoInformations {
     text-transform: uppercase;
@@ -776,8 +772,10 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     display: flex;
     justify-content: flex-end;
   }
+}
+@media screen and (min-width: 768px) {
   .otherPhotos {
-    margin: 2% 8%;
+    margin: 0;
     box-sizing: border-box;
   }
   .otherPhotos .otherPhotosContainer {
@@ -789,38 +787,19 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     text-align: center;
   }
   .otherPhotos .otherPhotosContainer .otherImgsBox {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    box-sizing: border-box;
+    justify-content: center;
     gap: 24px;
-  }
-  .otherPhotos .otherPhotosContainer .otherImgsBox .photosPostsContainer .postItem {
-    width: auto !important;
+    margin-bottom: 0;
   }
   .otherPhotos .otherPhotosContainer .otherImgsBox .photoBox {
     -o-object-fit: cover;
        object-fit: cover;
     aspect-ratio: 1.88/1.65;
-    width: 300px;
-  }
-}
-@media screen and (min-width: 1070px) {
-  .otherImgsBox .postItem img {
-    width: 400px !important;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .otherImgsBox {
-    gap: 40px !important;
-  }
-  .otherImgsBox .photoBox {
-    width: 500px !important;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .otherImgsBox .photoBox {
-    width: 600px !important;
   }
 }
 .frontImage {
@@ -1059,8 +1038,16 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
 }
 
 @media screen and (min-width: 768px) {
+  .publicationList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+  }
   .photosPostsContainer {
     box-sizing: border-box;
+    width: calc(50% - 24px);
     margin-bottom: 20px;
     margin-left: 0;
     margin-right: 0;
@@ -1068,9 +1055,6 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  .postItem {
-    width: calc(50% - 24px);
   }
   .postItem img {
     -o-object-fit: cover;
@@ -1106,16 +1090,23 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   height: 100vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20%;
 }
-.photoModal .modalPhotoContent {
-  margin: auto;
-  max-width: 62vw;
-  max-height: 75vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+.photoModal .photoModalCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 80vh;
 }
-.photoModal .modalPhotoCaption {
+.photoModal .photoModalCenter .imgContentContainer {
+  height: 100%;
+}
+.photoModal .photoModalCenter .imgContentContainer .modalPhotoContent {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.photoModal .photoModalCenter .imgContentContainer .modalPhotoCaption {
   margin: auto;
   box-sizing: border-box;
   padding-right: 15px;
@@ -1123,14 +1114,11 @@ footer#colophon nav#footer-menu .menu-footer-menu-container ul#footer-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-  max-width: 62vw;
-  max-height: 75vh;
   text-align: center;
   color: white;
   padding: 10px;
 }
-.photoModal .modalPhotoCaption span {
+.photoModal .photoModalCenter .imgContentContainer .modalPhotoCaption span {
   color: white;
   font-size: 14px;
   font-family: "Space Mono", sans-serif;

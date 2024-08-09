@@ -16,7 +16,7 @@ get_header();
         $image_data = get_random_image_url_and_alt();
 
         if ($image_data && $image_data['url']) {
-            echo '<img src="' . esc_url($image_data['url']) . '" alt="' . esc_attr($image_data['alt']) . '" />';
+            echo '<img class="notLazy" src="' . esc_url($image_data['url']) . '" alt="' . esc_attr($image_data['alt']) . '" />';
         } else {
             echo '<p>Aucune image n\'a été trouvée</p>';
         }

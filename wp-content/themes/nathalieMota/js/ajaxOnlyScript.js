@@ -9,19 +9,24 @@
   const arrow = document.querySelectorAll(".arrow");
 
   // Function to reinitialize the lazy load from EWWW. Without it, the images will loose the lazyload class
-  // after interacting with the filters
+  // after interacting with the filters. It's interacting with all images that are imgPostItem
   function reinitializePlugins() {
     document.querySelectorAll(".imgPostItem").forEach((img) => {
-      if (!img.classList.contains("lazyloaded")) {
+      // If image doesn't contain lazyloaded, we give lazyload class to it. We don't want the front section img to
+      // reboot tho !
+      if (
+        !img.classList.contains("lazyloaded") &&
+        !img.classList.contains("notLazy")
+      ) {
         img.classList.add("lazyload");
       }
     });
 
+    // If the library for lazy loading lazySizes is defined, we can initialize it
     if (typeof lazySizes !== "undefined") {
       lazySizes.init();
     }
 
-    // Rebind lightbox event listeners
     initLightbox();
   }
   // const allOrders = document.querySelectorAll(".yearFilter");
@@ -48,14 +53,14 @@
         // order: currentOrder,
       },
       success: function (res) {
-        $(".images").html(res);
+        $(".publicationList").html(res);
         //   if (res.max <= 1) {
         //     $("#loadMore").hide();
         //   } else {
         //     $("#loadMore").show();
         //   }
         // },
-        if ($(".images").children().length < 8) {
+        if ($(".publicationList").children().length < 8) {
           $("#loadMore").hide();
         } else {
           $("#loadMore").show();
@@ -162,15 +167,9 @@
         if (currentPage >= res.max) {
           $("#loadMore").hide();
         }
-        $(".images").append(res.html);
+        $(".publicationList").append(res.html);
         reinitializePlugins();
       },
     });
   });
-
-  // If the page would contain less than 8 posts at the loading, then something like this piece of code should be
-  // written to hide the loadMore btn.
-  // $(document).ready(function () {
-  //   applyFilters();
-  // });
 })(jQuery);

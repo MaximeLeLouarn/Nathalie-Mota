@@ -54,8 +54,12 @@
         <!-- Structure for the modal lightbox -->
         <div id="photoModal" class="photoModal">
             <span class="closePhotoModal">&times;</span>
-            <img class="modalPhotoContent" id="expandedImg">
-            <div class="modalPhotoCaption" id="modalPhotoCaption"></div>
+            <div class="photoModalCenter">
+                <div class="imgContentContainer">
+                <img class="modalPhotoContent" id="expandedImg">
+                <div class="modalPhotoCaption" id="modalPhotoCaption"></div>
+            </div>
+        </div>
             <div class="navigationLightbox">
                 <div class="arrowLight leftLight" id="prevPostLightbox">&#9664; Previous Post</div>
                 <div class="arrowLight rightLight" id="nextPostLightbox">Next Post &#9654;</div>
