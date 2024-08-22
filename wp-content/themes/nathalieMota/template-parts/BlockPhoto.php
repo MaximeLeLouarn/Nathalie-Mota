@@ -61,8 +61,8 @@
             </div>
         </div>
             <div class="navigationLightbox">
-                <div class="arrowLight leftLight" id="prevPostLightbox">&#9664; Previous Post</div>
-                <div class="arrowLight rightLight" id="nextPostLightbox">Next Post &#9654;</div>
+                <div class="arrowLight leftLight" id="prevPostLightbox">&#9664; Précédante</div>
+                <div class="arrowLight rightLight" id="nextPostLightbox">Suivante &#9654;</div>
             </div>
         </div>
 </div>

@@ -50,7 +50,6 @@
         // Reset to first page when there is a change of filters
         paged: currentPage,
         direction: currentOrder,
-        // order: currentOrder,
       },
       success: function (res) {
         $(".publicationList").html(res);

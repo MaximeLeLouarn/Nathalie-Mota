@@ -168,7 +168,7 @@ get_header();
 
 
             <div class="loadMoreContainer">
-                <a href="#!" class="" id="loadMore">Load more</a>
+                <a href="#!" class="" id="loadMore">Charger plus</a>
             </div>
 
         </div>
